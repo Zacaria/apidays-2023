@@ -60,18 +60,20 @@ timeline
 
 Address the pain points with current technologies (like TypeScript).
 
-## JSDoc is enough to get max value without overhead
+** JSDoc is enough to get max value without overhead **
 
 ----
 
+## New stakes, new needs
+
 Emphasize the importance of reliability, speed, and cost-effectiveness in API development.
 
-The stakes of software are increasingly complex.
+<!-- The stakes of software are increasingly complex. -->
 
-- space
-- time
+- stability
+- memory footprint
+- computation
 - functionality
-- concurrency
 - security
 
 space: memory footprint
@@ -163,30 +165,40 @@ no package un publish
 
 ## Sexy
 
+----
+
 Rust is the most loved language according [SO](https://survey.stackoverflow.co/2023/#section-admired-and-desired-programming-scripting-and-markup-languages) for 8 years
 
 When I go to JS meetups, lots of people speaking of Rust
 
 People are interested
 
+note:
+
+From my perspective that a good recruitment argument
+
+As a more difficult than average technology
+By recruiting Rust developers you get higher than average devs
+Rust teachings can be used even outside of Rust projects
+
 ---
 
-Why does Rust makes you build apps that "work good" ?
+### Why does Rust apps "work well" ?
 
 note:
 
-What does working good mean ?
+What does working well mean ?
 
 - predictable : it always does what you expect it to do
 - recovers from errors
 - secure
 - scales
 
----
+----
 
 - Compiled
 - No GC
-- No manual memory management Borrow checker
+- No manual memory management : Ownership & Borrow checker
 - developed in Rust
 
 => There is no blackbox between you and the machine
@@ -197,22 +209,9 @@ developed in rust so you will always be able to know what happens inside
 
 ---
 
-# Batteries included
-
-- compiler errors
-- fmt
-- clippy
-- tests
-- documentation
-
-note:
-
-tested documentation
-
----
-
 ## Compiler
 
+- error messages and hints
 - hight and low level : compilation with zero cost abstraction : example
 
 note:
@@ -224,9 +223,52 @@ You learn how to think like a computer while writing expressive code
 
 ---
 
-## Cargo
+## Tools
 
-- cargo
+- cargo test : IT, UT
+- cargo fmt
+- cargo bench
+- clippy
+- bacon
+- rust-analyzer
+
+----
+
+#### Cargo doc stays up to date
+
+```rust [|6-7|]
+/// Formats the sum of two numbers as a string.
+///
+/// # Examples
+///
+/// ```
+/// let result = mycrate::sum_as_string(5, 10);
+/// assert_eq!(result, "15");
+/// ```
+pub fn sum_as_string(a: i32, b: i32) -> String { (a + b).to_string() }
+```
+
+`cargo doc --open`
+
+note:
+
+coverage
+executed during tests
+keeps examples up to date
+
+---
+
+## AI
+
+When I started, Rust documentation was designed for C++ devs
+
+- ChatGPT
+- Copilot / Codeium
+- [lets get rusty](https://www.youtube.com/@letsgetrusty/)
+
+note:
+
+Helps with discovery
 
 ---
 
@@ -234,7 +276,7 @@ You learn how to think like a computer while writing expressive code
 
 Rust Project
 
-Rust Foundation
+[Rust Foundation](https://foundation.rust-lang.org/)
 
 Release process
 
@@ -264,13 +306,15 @@ Highlight the key benefits of using Rust – reliability, efficiency, and cost s
 
 ---
 
-Slide: Success Stories
+## Success Stories
+
 Share case studies or examples where Rust has been successfully used to build robust APIs.
 
 projects :
 - [Discord](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)
 - Cloudflare
 - Github
+- [others](https://github.com/omarabid/rust-companies)
 
 ---
 
