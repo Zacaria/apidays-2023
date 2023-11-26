@@ -45,43 +45,26 @@ https://havesome-rust-api-day.surge.sh
 
 timeline
 
----
+----
 
 **Discuss why there's a need to rethink the current approach to building APIs. ????**
 
----
+----
 
 ## TS pain points
+
+- types disappear at runtime
+- does not save from dealing with JS
+- adds complexity
+- no semver
 
 Address the pain points with current technologies (like TypeScript).
 
 ## JSDoc is enough to get max value without overhead
 
----
+----
 
 Emphasize the importance of reliability, speed, and cost-effectiveness in API development.
-
-=> Now what
-
----
-
-# "What"
-
----
-
-## Introducing Rust
-
-_Fast, Reliable, Productive: pick three._
-
----
-
-## Fast
-
----
-
-<img src="imgs/comparison.png" style="height: 450px">
-
-note:
 
 The stakes of software are increasingly complex.
 
@@ -96,15 +79,33 @@ time: execution speed, startup time
 functionality: quantity of functionality, you need to refactor
 security: quantity of bugs possible increase, and each failure or bug can impact millions
 
+----
+
+# "What"
+
 ---
+
+## Introducing Rust
+
+_Fast, Reliable, Productive: pick three._
+
+---
+
+## Fast
+
+----
+
+<img src="imgs/comparison.png" style="height: 450px">
+
+----
 
 ## Reliable
 
----
+----
 
 <img src="imgs/billion-dollar-mistake.jpg" style="height: 250px">
 
----
+----
 
 Borrow checker by default guarantees :
 
@@ -113,17 +114,17 @@ Borrow checker by default guarantees :
 - No dangling pointers
 - Runtime type system
 
----
+----
 
 What's wrong with this code ?
 
-```js
-function readFile(path) {
+```ts
+function readFile(path: string): string {
   return fs.readFileSync(path);
 }
 ```
 
----
+----
 
 ```rust
 fn read_file(path: &str) -> Result<String, io::Error> {
@@ -139,32 +140,34 @@ fn read_file(path: &str) -> String {
 
 Make it clear of what could go wrong
 
----
+----
 
 2016 : Do you remember the [left-pad drama](https://qz.com/646467/how-one-programmer-broke-the-internet-by-deleting-a-tiny-piece-of-code) ?
 
 no package un publish
 
----
+----
 
 - Linux project
-- Microsoft project
+- [Microsoft](https://msrc.microsoft.com/blog/2019/07/a-proactive-approach-to-more-secure-code/) project
 
 ---
 
 ## Cheap
 
 - CPU and RAM consumption
+- Less bugs
+- [Firecracker](https://firecracker-microvm.github.io/)
 
 ---
 
 ## Sexy
 
-today Rust is the most loved language according SO for 8 years
+Rust is the most loved language according [SO](https://survey.stackoverflow.co/2023/#section-admired-and-desired-programming-scripting-and-markup-languages) for 8 years
 
 When I go to JS meetups, lots of people speaking of Rust
 
-So people are interested
+People are interested
 
 ---
 
@@ -194,7 +197,7 @@ developed in rust so you will always be able to know what happens inside
 
 ---
 
-# Embeded tools
+# Batteries included
 
 - compiler errors
 - fmt
@@ -221,20 +224,25 @@ You learn how to think like a computer while writing expressive code
 
 ---
 
-## Default tooling
+## Cargo
 
 - cargo
 
-- gouvernance
+---
 
-  Introduce Rust as a solution to these challenges.
-  Briefly mention what Rust is and its rising popularity in the software development world.
+## Governance
+
+Rust Project
+
+Rust Foundation
+
+Release process
 
 ---
 
 # "How"
 
----
+----
 
 Slide: Rust in Action
 Dive into how Rust addresses the pain points you've identified.
@@ -259,8 +267,8 @@ Highlight the key benefits of using Rust – reliability, efficiency, and cost s
 Slide: Success Stories
 Share case studies or examples where Rust has been successfully used to build robust APIs.
 
-- projects
-- Discord
+projects :
+- [Discord](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)
 - Cloudflare
 - Github
 
