@@ -43,7 +43,44 @@ https://havesome-rust-api-day.surge.sh
 
 # "Why" : History & context
 
-timeline
+----
+
+Big brains decided to extract Chrome's JS VM to run JavaScript outside the browser
+
+With this they created JS modules systems
+
+Suddenly, it became really to reuse and build upon JS code.
+
+The abstraction was so powerfull that it created the FullStack developers.
+
+But the fullstack Java, dotNet statically typed developers
+
+Did not like the powerful JS yet dangerous JavaScript.
+
+The feeling of safety was no more when wrote JS.
+
+----
+
+So TypeScript came as a superset. Bringing types, checks and refactor capabilities.
+
+The greed, we can all be guilty of, can even let us build a complete typed sidesystem around our functionalities.
+
+Costing time and effort just to please the compiler
+
+Unfortunately, what TS brings fades just after the compilation.
+
+Types, classes, interfaces are gone.
+
+At 4am when problems occur, it's JS that we have to deal with.
+
+----
+
+NodeJs & NPM
+
+- modules
+- boom of easy to reuse code
+- fullstack JS. Easy to start with, hard to master
+- fullstack from backend guys don't want to learn JS
 
 ----
 
@@ -93,19 +130,34 @@ _Fast, Reliable, Productive: pick three._
 
 ---
 
-## Fast
-
-----
-
-<img src="imgs/comparison.png" style="height: 450px">
-
-----
-
-## Reliable
+## Stability
 
 ----
 
 <img src="imgs/billion-dollar-mistake.jpg" style="height: 250px">
+
+note:
+
+When a value is unexpectedly null or undefined
+That's an unvalid state
+As a system programing language, Rust makes it easy to make invalid state unrepresentable
+----
+
+- compiled
+- no GC
+- memory management enforced by the compiler
+- zero cost high level functions
+- Bonus : devs level up
+
+
+note:
+
+- compiled : so it produces a specific output for each architecture
+- no GC : memory is managed via a deterministic system called Borrow checker
+- no manual memory management by default: it's enforced by the compiler
+- Developers do the memory management by themselves, but now are guided by the rules of the compiler
+- zero cost high level functions like map or filter are compiled to the same output as imperative loops
+- As a side effect, the high level languages devs get closer to the machine and get better at writing correct code
 
 ----
 
@@ -152,6 +204,14 @@ no package un publish
 
 - Linux project
 - [Microsoft](https://msrc.microsoft.com/blog/2019/07/a-proactive-approach-to-more-secure-code/) project
+
+---
+
+## Fast
+
+----
+
+<img src="imgs/comparison.png" style="height: 450px">
 
 ---
 
