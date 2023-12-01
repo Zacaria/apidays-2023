@@ -12,6 +12,14 @@ API Days Paris - Zacaria Chtatar - December 2023
 
 https://havesome-rust-api-day.surge.sh
 
+note:
+
+Started dev and JS 10 years ago
+And I love it
+I love the fact that you can move quickly
+The fact that you can use it everywhere
+And that's the richest ecosystem ever
+
 ---
 
 ## Forget TypeScript
@@ -19,6 +27,12 @@ https://havesome-rust-api-day.surge.sh
 ## Choose Rust to build
 
 ## Robust, Fast and Cheap APIs
+
+note:
+
+But today I'm going to suggest you to
+
+Forget Typescript
 
 ---
 
@@ -198,12 +212,28 @@ Make it clear of what could go wrong
 
 2016 : Do you remember the [left-pad drama](https://qz.com/646467/how-one-programmer-broke-the-internet-by-deleting-a-tiny-piece-of-code) ?
 
-no package un publish
+no package unpublish
+
+note:
+
+cargo does not allow unpublishing
+Instead it allows flagging packages and version to not be downloaded as new dependency
 
 ----
 
-- Linux project
-- [Microsoft](https://msrc.microsoft.com/blog/2019/07/a-proactive-approach-to-more-secure-code/) project
+Linux: [Le Kernel](https://linux.developpez.com/actu/337316/Rust-for-Linux-est-officiellement-fusionne-le-support-initial-de-Rust-for-Linux-fournit-l-infrastructure-de-base-et-une-integration-elementaire/)
+
+<img src="imgs/linus-logo.webp" style="height: 250px">
+
+- 2/3 of vunerabilities come from memory management <!-- .element: class="fragment" data-fragment-index="1" -->
+- Kernel is in C and Assembly <!-- .element: class="fragment" data-fragment-index="2" -->
+- Linus Torvalds : ❌ C++ ❌ <!-- .element: class="fragment" data-fragment-index="3" -->
+- attract young devs <!-- .element: class="fragment" data-fragment-index="4" -->
+
+note:
+
+<!-- - Linux project
+- [Microsoft](https://msrc.microsoft.com/blog/2019/07/a-proactive-approach-to-more-secure-code/) project -->
 
 ---
 
@@ -213,12 +243,72 @@ no package un publish
 
 <img src="imgs/comparison.png" style="height: 450px">
 
+note:
+
+[Energy efficiency accross programing languages](https://greenlab.di.uminho.pt/wp-content/uploads/2017/10/sleFinal.pdf)
+
+Energy measured using a framework (Computer Language Benchmarks Game) designed for running testing and comparing solutions to problems
+
+And Intel's Running Average Power Limit (RAPL) tool which can measure energy consumption of an executed program.
+
+----
+
+#### Github: [Code Search index](https://github.blog/2023-02-06-the-technology-behind-githubs-new-code-search/)
+
+<img src="imgs/github.png" style="background-color: whitesmoke; height: 150px">
+
+
+45 million repos to index : <!-- .element: class="fragment" data-fragment-index="1" -->
+
+- several months with Elasticsearch <!-- .element: class="fragment" data-fragment-index="2" -->
+- 18h in Rust <!-- .element: class="fragment" data-fragment-index="3" -->
+
+----
+
+#### Clouflare: [HTTP proxy](https://blog.cloudflare.com/how-we-built-pingora-the-proxy-that-connects-cloudflare-to-the-internet/)
+
+<img src="imgs/cloudflare-logo.png" style="background-color: whitesmoke; height: 150px">
+
+- nginx not fast enough 🤯 <!-- .element: class="fragment" data-fragment-index="1" -->
+- hard to customize in C <!-- .element: class="fragment" data-fragment-index="2" -->
+- allows to share connections between threads <!-- .element: class="fragment" data-fragment-index="3" -->
+
+= 160x less connections to the origins <!-- .element: class="fragment" data-fragment-index="4" -->
+
+= 434 years less handshakes per day <!-- .element: class="fragment" data-fragment-index="5" -->
+
+----
+
+#### Discord: [Message read service](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)
+
+<img src="imgs/discord-logo.png" style="background-color: red; height: 70px">
+
+
+- Cache of a few billion entries <!-- .element: class="fragment" data-fragment-index="1" -->
+- Every connection, message sent and read... <!-- .element: class="fragment" data-fragment-index="2" -->
+- latences toutes les 2 minutes en Go à cause du GC <!-- .element: class="fragment" data-fragment-index="3" -->
+
+<img src="imgs/discord_rex.png" style="height: 250px"> <!-- .element: class="fragment" data-fragment-index="4" -->
+
+note:
+
+Thanks to no GC
+Instead of stopping the world to clean unused memory
+Every variable is cleaned at a precise moment
+For the devs, that's the purpose of ownership
+
 ---
 
 ## Cheap
 
 - CPU and RAM consumption
-- Less bugs
+
+- Less maintenance with less bugs
+
+----
+
+### AWS Lambda
+
 - [Firecracker](https://firecracker-microvm.github.io/)
 
 ---
@@ -227,7 +317,7 @@ no package un publish
 
 ----
 
-Rust is the most loved language according [SO](https://survey.stackoverflow.co/2023/#section-admired-and-desired-programming-scripting-and-markup-languages) for 8 years
+Rust is the most admired language according [SO](https://survey.stackoverflow.co/2023/#section-admired-and-desired-programming-scripting-and-markup-languages) for 8 years
 
 When I go to JS meetups, lots of people speaking of Rust
 
@@ -240,6 +330,24 @@ From my perspective that a good recruitment argument
 As a more difficult than average technology
 By recruiting Rust developers you get higher than average devs
 Rust teachings can be used even outside of Rust projects
+
+----
+
+### It's a challenge
+
+- It take 3 to 6 months to become productive
+
+- It's not **that** hard
+
+- Documentation was oriented towards C/C++ senior devs
+
+note:
+
+[Study](https://blog.rust-lang.org/2020/12/16/rust-survey-2020.html)
+
+As a manager recruiting someone who successfully wen through the process of learning Rust
+
+It's a safe bet in the technical aspect
 
 ---
 
@@ -328,7 +436,7 @@ When I started, Rust documentation was designed for C++ devs
 
 note:
 
-Helps with discovery
+Helps with functions discovery and paradigm
 
 ---
 
@@ -375,6 +483,12 @@ projects :
 - Cloudflare
 - Github
 - [others](https://github.com/omarabid/rust-companies)
+
+---
+
+# Downsides ?
+
+- Project moves a bit slower
 
 ---
 
