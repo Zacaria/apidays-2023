@@ -566,45 +566,6 @@ Breaking changes are opt-in thanks to editions. The same version of Rust can com
 
 ---
 
-### Benefits
-
-When it compiles, it runs <!-- .element: class="fragment" data-fragment-index="1" -->
-
-correctly <!-- .element: class="fragment" data-fragment-index="2" -->
-
-note:
-
-It seems evident, but is it ?
-
-What does correctly mean ?
-
-- predictable : it always does what you expect it to do
-- the error paths are handled or intentionnaly not handled
-- secure
-- scales
-
-----
-
-<img src="imgs/compare_effort.png" style="height: 500px">
-
-note:
-Usually you spend 50% of efforts writing and 50% proving the code works
-
-Proving includes Unit tests, Integration tests, with a QA
-or in production ...
-
-The problem with TypeScript is that it gives the illusion you're now at 75/25 of writing vs proving
-But you are not.
-
-TS lets you write code faster, but it's still 50/50 because of the types getting in your way
-
-Most of the time it's ok, because we want to move fast. And the drawbacks are not that big.
-We just need to be aware of it.
-
-So the compiler and the particular syntax checks a ton of problems
-
----
-
 ### Possible struggles
 
 - Project moves slower
@@ -656,7 +617,7 @@ So you can always find a solution
 
 ---
 
-### "When and Where"
+### "Let's conclude"
 
 ----
 
@@ -668,13 +629,15 @@ note:
 
 let's conclude with this chart
 
-It has been drawn by a software enginner named theo, which focus is building things as fast as possible, to quickly achieve product market fit.
+It has been drawn by a software enginner named theo which also appears on Youtube. He focuses is building things as fast as possible, to quickly achieve product market fit.
 
-theo explains accurately that lots of projects starting don't know what they will look like in the end
+His point of view is often opposed to an other guy named ThePrimagean. He focuses on performance and correctness
+
+Theo explains accurately that lots of projects starting don't know what they will look like in the end
 
 So it's better to start using the most flexible tools in order to pivot easily.
 
-At this point just use flexible stacks like typescript and abstract problems using ready to go services
+At this point just use flexible stacks like typescript, and abstract problems using ready to go services
 
 But when the project finds its way, then the new need is performance and stability over flexibility
 
@@ -686,10 +649,10 @@ You'll integrate them with the confidence that you won't break things.
 
 ---
 
-## Q&A
-
----
-
 ### Thank you
 
 <img src="imgs/crab2.png" style="height: 30vh">
+
+---
+
+## Q&A
