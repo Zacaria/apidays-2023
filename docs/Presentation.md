@@ -86,7 +86,7 @@ Frontend became so complicated that we separated Frontend and Backend.
 
 note:
 
-Often separated by an API
+Which were often separated by an API
 
 Then we merged them again to create the super fullstack developers
 
