@@ -651,8 +651,8 @@ So you can always find a solution
 - [fasterthanlime - A half-hour to learn Rust](https://fasterthanli.me/articles/a-half-hour-to-learn-rust)
 - [Noboilerplate - Youtube](https://www.youtube.com/c/NoBoilerplate)
 - [Code to the moon - Youtube](https://www.youtube.com/@codetothemoon/videos)
+- [Let's get rusty - Youtube & paid bootcamp](https://letsgetrusty.com/)
 - [Roadmap](https://roadmap.sh/rust)
-- lets get rusty
 
 ---
 
