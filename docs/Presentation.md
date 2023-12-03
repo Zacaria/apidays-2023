@@ -262,6 +262,8 @@ Let's take an example of someone who is famously hard to please in terms of code
 
 To continue development after C, has started using Rust, as well as Microsoft for Windows and Google for Android
 
+That's a big sign of trust towards the whole ecosystem
+
 <!-- - Linux project
 - [Microsoft](https://msrc.microsoft.com/blog/2019/07/a-proactive-approach-to-more-secure-code/) project -->
 
@@ -347,13 +349,15 @@ Energy measured using a framework (Computer Language Benchmarks Game) designed f
 
 And Intel's Running Average Power Limit (RAPL) tool which can measure energy consumption of an executed program.----
 
+----
+
 ### AWS Lambda
 
 - [Firecracker](https://firecracker-microvm.github.io/)
 
 ---
 
-### Sexy
+### Attractive
 
 <ul>
 <li class="fragment" data-fragment-index="1">Most admired language according to  <a href="https://survey.stackoverflow.co/2023/#section-admired-and-desired-programming-scripting-and-markup-languages">StackOverflow</a> for 8 years !</li>
@@ -368,7 +372,7 @@ There is currently a high entry barrier in this domain.
 
 Most of Rust projects require senior C++ dev
 
-Otherwise there are  risking yourself into volatile Web3 projects
+Otherwise there are risky volatile Web3 projects
 
 From my perspective that's a good recruitment argument
 
@@ -497,12 +501,6 @@ This kind of hints are everywhere, not only for simple hello world examples
 
 ---
 
-### Installation process
-
-`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
-
-----
-
 ### Tools
 
 - cargo test : IT, UT
@@ -546,15 +544,15 @@ keeps examples up to date
 
 ## Governance
 
-Rust Project
+[Rust Project](https://www.rust-lang.org/)
 
 [Rust Foundation](https://foundation.rust-lang.org/)
 
-Release process
+Release every 6 weeks
 
 Backward compatibility
 
-Breaking changes are opt-in
+Breaking changes are opt-in thanks to [editions](https://doc.rust-lang.org/edition-guide/editions/)
 
 note:
 
@@ -562,16 +560,20 @@ If code compiled at some point, it's guaranteed to compile later.
 
 There's a [special project](https://github.com/rust-lang/crater) that runs a large number of packages to look for regressions in the compiler
 
-Breaking changes are opt-in thanks to editions. The same version of Rust can compile different editions. Any crate can specify an edition.
+Breaking changes are opt-in thanks to editions.
+
+The same version of Rust can compile different editions.
+
+Any crate can specify an edition.
 
 ---
 
 ### Possible struggles
 
-- Project moves slower
-- It's an other paradigm
-- Challenging to learn
-- Build time
+- project moves slower
+- it's an other paradigm
+- challenging to learn
+- build time
 - work with external libraries
 
 note:
