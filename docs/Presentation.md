@@ -405,22 +405,19 @@ It's a safe bet on the technical aspect
 - no manual memory management : Ownership & Borrow checker
 
 => There is no blackbox between you and the machine <!-- .element: class="fragment" data-fragment-index="1" -->
+
 => Better predictability <!-- .element: class="fragment" data-fragment-index="2" -->
 
 note:
 
 - compiled : so it produces a specific output for each architecture
 - no GC : memory is managed via a deterministic system called Borrow checker
-- no manual memory management by default: it's enforced by the compiler
-- Developers do the memory management by themselves, but now are guided by the rules of the compiler
+- compiler developed in Rust: you can always go look and see what happens, it's very well explained
 - zero cost high level functions like map or filter are compiled to the same output as imperative loops
 - As a side effect, the high level languages devs get closer to the machine and get better at writing correct code
+- Developers do the memory management by themselves, but now are guided by the rules of the compiler
 
-developed in rust so you will always be able to know what happens inside
-
-functional or imperative style code has the same output in terms of machine instructions
-
----
+----
 
 ### Ownership rules
 
@@ -434,7 +431,9 @@ functional or imperative style code has the same output in terms of machine inst
 note:
 
 pas de pause
+
 pas de GC
+
 pas de référence vers rien, pas de undefined
 
 ----
@@ -586,14 +585,17 @@ What does correctly mean ?
 
 ----
 
-<img src="imgs/compare_effort.png" style="height: 450px">
+<img src="imgs/compare_effort.png" style="height: 500px">
 
 note:
 Usually you spend 50% of efforts writing and 50% proving the code works
+
 Proving includes Unit tests, Integration tests, with a QA
 or in production ...
+
 The problem with TypeScript is that it gives the illusion you're now at 75/25 of writing vs proving
 But you are not.
+
 TS lets you write code faster, but it's still 50/50 because of the types getting in your way
 
 Most of the time it's ok, because we want to move fast. And the drawbacks are not that big.
