@@ -22,19 +22,17 @@ And that's the richest ecosystem ever
 
 ---
 
-Forget TypeScript
+Forget TypeScript <!-- .element: class="fragment" data-fragment-index="1" -->
 
-Choose Rust to build
+Choose Rust to build <!-- .element: class="fragment" data-fragment-index="2" -->
 
-Robust, Fast and Cheap APIs
+Robust, Fast and Cheap APIs <!-- .element: class="fragment" data-fragment-index="3" -->
 
 note:
 
 But today I'm going to suggest you to
 
-Forget Typescript
-
-note:
+Forget Typescript and choose Rust to build your Robust, fast, and cheap APIs
 
 It's not a tutorial, I'll try to give maximum elements to help guide your decision making.
 
@@ -197,36 +195,6 @@ As a system programing language, Rust makes it easy to make invalid state unrepr
 
 ----
 
-- compiled
-- no GC
-- memory management enforced by the compiler
-- zero cost high level functions
-- developed in Rust
-- Bonus : devs level up
-
-=> No blackbox between you and the machine
-=> Predictability
-
-note:
-
-- compiled : so it produces a specific output for each architecture
-- no GC : memory is managed via a deterministic system called Borrow checker
-- no manual memory management by default: it's enforced by the compiler
-- Developers do the memory management by themselves, but now are guided by the rules of the compiler
-- zero cost high level functions like map or filter are compiled to the same output as imperative loops
-- As a side effect, the high level languages devs get closer to the machine and get better at writing correct code
-
-----
-
-Borrow checker by default guarantees :
-
-- No memory leaks
-- No use-after-free
-- No dangling pointers
-- Runtime type system
-
-----
-
 What's wrong with this code ?
 
 ```ts
@@ -234,6 +202,12 @@ function readFile(path: string): string {
   return fs.readFileSync(path);
 }
 ```
+
+note:
+
+There is no hint that this could break under some conditions
+
+Not in the interface, nor in the code
 
 ----
 
@@ -249,7 +223,7 @@ fn read_file(path: &str) -> String {
 }
 ```
 
-Make it clear of what could go wrong
+Clarify what could go wrong
 
 ----
 
@@ -273,7 +247,7 @@ Instead it allows flagging packages and version to not be downloaded as new depe
 
 ----
 
-Linux: [Le Kernel](https://linux.developpez.com/actu/337316/Rust-for-Linux-est-officiellement-fusionne-le-support-initial-de-Rust-for-Linux-fournit-l-infrastructure-de-base-et-une-integration-elementaire/)
+Linux: [The Kernel](https://linux.developpez.com/actu/337316/Rust-for-Linux-est-officiellement-fusionne-le-support-initial-de-Rust-for-Linux-fournit-l-infrastructure-de-base-et-une-integration-elementaire/)
 
 <img src="imgs/linus-logo.webp" style="height: 250px">
 
@@ -284,9 +258,9 @@ Linux: [Le Kernel](https://linux.developpez.com/actu/337316/Rust-for-Linux-est-o
 
 note:
 
-For that I'll tell you that the Linux project which is looking for a new technology
+Let's take an example of someone who is famously hard to please in terms of code.
 
-To continue development after C, has started using Rust, as well as Microsoft for Windows
+To continue development after C, has started using Rust, as well as Microsoft for Windows and Google for Android
 
 <!-- - Linux project
 - [Microsoft](https://msrc.microsoft.com/blog/2019/07/a-proactive-approach-to-more-secure-code/) project -->
@@ -321,7 +295,7 @@ And Intel's Running Average Power Limit (RAPL) tool which can measure energy con
 
 ----
 
-#### Clouflare: [HTTP proxy](https://blog.cloudflare.com/how-we-built-pingora-the-proxy-that-connects-cloudflare-to-the-internet/)
+#### Cloudflare: [HTTP proxy](https://blog.cloudflare.com/how-we-built-pingora-the-proxy-that-connects-cloudflare-to-the-internet/)
 
 <img src="imgs/cloudflare-logo.png" style="background-color: whitesmoke; height: 150px">
 
@@ -342,7 +316,7 @@ And Intel's Running Average Power Limit (RAPL) tool which can measure energy con
 
 - Cache of a few billion entries <!-- .element: class="fragment" data-fragment-index="1" -->
 - Every connection, message sent and read... <!-- .element: class="fragment" data-fragment-index="2" -->
-- latences toutes les 2 minutes en Go à cause du GC <!-- .element: class="fragment" data-fragment-index="3" -->
+- latences every 2 minutes because of Go Garbage collector <!-- .element: class="fragment" data-fragment-index="3" -->
 
 <img src="imgs/discord_rex.png" style="height: 250px"> <!-- .element: class="fragment" data-fragment-index="4" -->
 
@@ -381,40 +355,44 @@ And Intel's Running Average Power Limit (RAPL) tool which can measure energy con
 
 ### Sexy
 
-- Most admired language according to [SO](https://survey.stackoverflow.co/2023/#section-admired-and-desired-programming-scripting-and-markup-languages) for 8 years
-
-- JS meetups: people speaking about Rust
-
-- As recruiter, it's hint of good dev
+<ul>
+<li class="fragment" data-fragment-index="1">Most admired language according to  <a href="https://survey.stackoverflow.co/2023/#section-admired-and-desired-programming-scripting-and-markup-languages">StackOverflow</a> for 8 years !</li>
+<li class="fragment" data-fragment-index="2">JS meetups: people talking about Rust </li>
+<li class="fragment" data-fragment-index="3">More devs available than offers </li>
+<li class="fragment" data-fragment-index="4">Web3 projects </li>
+</ul>
 
 note:
 
-There currently a high entry barrier in this domain.
+There is currently a high entry barrier in this domain.
 
-Most of Rust projects require senior C++ dev or risking yourself into volatile Web3 projects
+Most of Rust projects require senior C++ dev
 
-From my perspective that a good recruitment argument
+Otherwise there are  risking yourself into volatile Web3 projects
+
+From my perspective that's a good recruitment argument
 
 As a more difficult than average technology
 By recruiting Rust developers you get higher than average devs
-Rust teachings can be used even outside of Rust projects
+Rust teachings can be used even outside of the language
 
 ----
+
 ### It's a challenge
+ 
+- It takes 3 to 6 months to become productive
 
-- It take 3 to 6 months to become productive
+- It's not **that** hard, it's just different
 
-- It's not **that** hard
-
-- Documentation was oriented towards C/C++ senior devs
+- Documentation was oriented towards C/C++ devs
 
 note:
 
 [Study](https://blog.rust-lang.org/2020/12/16/rust-survey-2020.html)
 
-As a manager recruiting someone who successfully wen through the process of learning Rust
+As a manager recruiting someone who successfully went through the process of learning Rust
 
-It's a safe bet in the technical aspect
+It's a safe bet on the technical aspect
 
 ---
 
@@ -422,13 +400,21 @@ It's a safe bet in the technical aspect
 
 - compiled
 - no GC
-- developed in Rust
-- hight and low level : compilation with zero cost abstraction
+- compiler developed in Rust
+- low and high level : compilation with zero cost abstraction
 - no manual memory management : Ownership & Borrow checker
 
-=> There is no blackbox between you and the machine<!-- .element: class="fragment" data-fragment-index="1" -->
+=> There is no blackbox between you and the machine <!-- .element: class="fragment" data-fragment-index="1" -->
+=> Better predictability <!-- .element: class="fragment" data-fragment-index="2" -->
 
 note:
+
+- compiled : so it produces a specific output for each architecture
+- no GC : memory is managed via a deterministic system called Borrow checker
+- no manual memory management by default: it's enforced by the compiler
+- Developers do the memory management by themselves, but now are guided by the rules of the compiler
+- zero cost high level functions like map or filter are compiled to the same output as imperative loops
+- As a side effect, the high level languages devs get closer to the machine and get better at writing correct code
 
 developed in rust so you will always be able to know what happens inside
 
@@ -436,19 +422,35 @@ functional or imperative style code has the same output in terms of machine inst
 
 ---
 
-### Ownership
+### Ownership rules
 
 - Only one variable owns data at a time  <!-- .element: class="fragment" data-fragment-index="1" -->
-- Multiple readers or on editor <!-- .element: class="fragment" data-fragment-index="2" -->
+- Multiple readers or one editor <!-- .element: class="fragment" data-fragment-index="2" -->
 
 => Memory is freed as soon as variable is out of scope<!-- .element: class="fragment" data-fragment-index="3" -->
 
 **It's like a fundamental problem has been solved**<!-- .element: class="fragment" data-fragment-index="4" -->
 
 note:
+
 pas de pause
 pas de GC
 pas de référence vers rien, pas de undefined
+
+----
+
+### Borrow checker 
+
+guarantees by default:
+
+- No memory leaks
+- No use-after-free
+- No dangling pointers
+- Runtime type system
+
+note:
+
+The borrow checker is the system that enforces the rules of ownership
 
 ---
 
@@ -495,6 +497,12 @@ note:
 This kind of hints are everywhere, not only for simple hello world examples
 
 ---
+
+### Installation process
+
+`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+
+----
 
 ### Tools
 
