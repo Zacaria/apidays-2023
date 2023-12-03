@@ -42,111 +42,139 @@ I'll introduce you to Rust by being as less technical as possible.
 
 ---
 
-<!--
-## Typescript
-
-- Dev UX
-
-* Makes you forget that utimately it executes Javascript
-* Makes you forget that it generates far more Javascript than you think
-* Extensive type system which can block progression even if execution path is right
-* Needs ecosystem support in order to not be a pain working with libraries
--->
-
-<!-- --- -->
-
-
 ## Some context
-
-note:
-
-Why
 
 ----
 
-2009 : it's jQuery era
+### 2009
 
-Big brains decided to extract Chrome's JS VM to run JavaScript outside the browser
+JS lives in the browser
 
+<img src="imgs/jquery-white.png" alt="jquery logo" style="height: 200px">
+
+note:
+
+2009 : it's jQuery era JS lives mainly in the browser. It's used to make animations and async requests
+
+----
+
+### Until Nodejs
+
+V8 engine, modules system & NPM
+
+<img src="imgs/nodejs-npm.gif" alt="nodejs and npm logo" style="height: 200px">
+
+- modules
+- boom of easy to reuse code
+- fullstack JS : Easy to start with, hard to master
+
+note:
+
+Some bright people decided to extract Chrome's JS VM to run JavaScript outside the browser
 With this, they created JS modules systems
 
 Suddenly, it became really easy to reuse and build upon JS code.
 
-The abstraction was so powerfull that it created the FullStack developers.
+The abstraction was so powerfull that it created a rich ecosystem where JS was a must learn language
 
-But the fullstack Java, dotNet statically typed developers
-
-Did not like the powerful JS yet dangerous JavaScript.
-
-The feeling of safety was no more when wrote JS.
+Frontend became so complicated that we separated Frontend and Backend.
 
 ----
 
-So TypeScript came as a superset. Bringing types, checks and refactor capabilities.
+### Fullstack developers
 
-The greed, we can all be guilty of, can even let us build a complete typed sidesystem around our functionalities.
+- paradigm clash
+- hard to sync changes between frontend and backend
 
-Costing time and effort just to please the compiler
+note:
 
-Unfortunately, what TS brings fades just after the compilation.
+Often separated by an API
 
-Types, classes, interfaces are gone.
+Then we merged them again to create the super fullstack developers
 
-At 4am when problems occur, it's JS that we have to deal with.
+But the Java, dotNet, statically typed developers
 
-----
+Hurt themselves to the powerful yet dangerous JavaScript.
 
-NodeJs & NPM
+The feeling of safety was no more.
 
-- modules
-- boom of easy to reuse code
-- fullstack JS. Easy to start with, hard to master
-- fullstack from backend guys don't want to learn JS
+Especially when trying to integrate static typed backends the dynamically typed frontend.
 
 ----
 
-TypeScript
+### Typescript
+
+<img src="imgs/ts-superset.jpeg" alt="ts as a super set of js schema" style="height: 400px">
+
 
 - OOP patterns
 - compiler checks
 - type system
 - IDE Developer experience
 
-<!-- 
-**Discuss why there's a need to rethink the current approach to building APIs. ????** -->
+note:
+
+So TypeScript came as a superset. Bringing types, checks and better code discoverability. overall better developer experience
+
+The greed, we can all be guilty of, can even let us build a complete typed sidesystem around our functionalities.
+
+Costing time and effort just to please the compiler. Don't even ask to change a type deeply buried into layer of inheritance or other abstractions.
+
+Unfortunately, what TS brings fades just after the compilation.
+
+Types, classes, interfaces are gone.
+
+At 4am when problems wake you up, it's JavaScript that you have to deal with.
 
 ----
 
 ## Pain points
 
 - types disappear at runtime
-- does not save from dealing with JS
+- does not save you from dealing with JS
 - adds complexity
 - no semver
 
-<!-- Address the pain points with current technologies (like TypeScript). -->
+**JSDoc is enough to get max value without overhead** <!-- .element: class="fragment" data-fragment-index="1" -->
 
-** JSDoc is enough to get max value without overhead ** <!-- .element: class="fragment" data-fragment-index="1" -->
+note:
+
+no semver is quite important
+
+It's a way to synchronize with the ecosystem.
+
+It's not normal to have breaking changes in minor version bumps.
+
+And it feels strange to have to point it out
 
 ---
 
-## New stakes, new needs
+### New stakes, new needs
+
+
+note:
+
+All of this has a purpose
+
+The more technology enters inside our society, the more it becomes sensitive
+
+At first it was on optional boost to our lives
 
 ----
 
-|Stakes|Needs|
+|Stakes| Needs|
 |-------|-------|
 |worldwide scale<br>privacy<br>market competition<br>environment<br><br>human lives|sclability<br>security<br>functionality <br>computation time<br>memory footprint<br>safety|
 
 note:
 
-space: memory footprint
-time: execution speed, startup time
-functionality: quantity of functionality, you need to refactor
-security: quantity of bugs possible increase, and each failure or bug can impact millions
+Now it's an essential part, the stakes are pretty serious
+
+I believe for such use cases, TypeScript is not enough
 
 safety :  refers to the ability of a system to operate without causing harm or unintended consequences to people or the environment. It's about the system's internal behavior and its impact. The system needs to be fault tolerant
 security : protecting systems from malicious attacks and unauthorized access. It's about external threats and the system's ability to defend against them.
+
 ---
 
 ## Introducing Rust
@@ -351,21 +379,19 @@ And Intel's Running Average Power Limit (RAPL) tool which can measure energy con
 
 ---
 
-## Sexy
+### Sexy
 
-----
+- Most admired language according to [SO](https://survey.stackoverflow.co/2023/#section-admired-and-desired-programming-scripting-and-markup-languages) for 8 years
 
-Rust is the most admired language according [SO](https://survey.stackoverflow.co/2023/#section-admired-and-desired-programming-scripting-and-markup-languages) for 8 years
+- JS meetups: people speaking about Rust
 
-When I go to JS meetups, lots of people speaking of Rust
-
-People are motivated
+- As recruiter, it's hint of good dev
 
 note:
 
 There currently a high entry barrier in this domain.
 
-Most of Rust projects require senior C++ dev or risking yourself into volatile crypto projects
+Most of Rust projects require senior C++ dev or risking yourself into volatile Web3 projects
 
 From my perspective that a good recruitment argument
 
@@ -374,7 +400,6 @@ By recruiting Rust developers you get higher than average devs
 Rust teachings can be used even outside of Rust projects
 
 ----
-
 ### It's a challenge
 
 - It take 3 to 6 months to become productive
@@ -391,32 +416,83 @@ As a manager recruiting someone who successfully wen through the process of lear
 
 It's a safe bet in the technical aspect
 
-----
+---
 
-- Compiled
-- No GC
-- No manual memory management : Ownership & Borrow checker
+### Features
+
+- compiled
+- no GC
 - developed in Rust
+- hight and low level : compilation with zero cost abstraction
+- no manual memory management : Ownership & Borrow checker
 
-=> There is no blackbox between you and the machine
+=> There is no blackbox between you and the machine<!-- .element: class="fragment" data-fragment-index="1" -->
 
 note:
 
 developed in rust so you will always be able to know what happens inside
 
+functional or imperative style code has the same output in terms of machine instructions
+
 ---
 
-## TBD : Compiler 
+### Ownership
 
-- error messages and hints
-- hight and low level : compilation with zero cost abstraction : example
+- Only one variable owns data at a time  <!-- .element: class="fragment" data-fragment-index="1" -->
+- Multiple readers or on editor <!-- .element: class="fragment" data-fragment-index="2" -->
+
+=> Memory is freed as soon as variable is out of scope<!-- .element: class="fragment" data-fragment-index="3" -->
+
+**It's like a fundamental problem has been solved**<!-- .element: class="fragment" data-fragment-index="4" -->
+
+note:
+pas de pause
+pas de GC
+pas de référence vers rien, pas de undefined
+
+---
+
+### The compiler ❤️
+
+<span class="fragment" data-fragment-index="1">
+
+```rust
+fn say(message: &str) {
+    println!(message);
+}
+
+fn main() {
+    let message = "hey";
+    say(message);
+}
+```
+</span>
+
+<img src="imgs/erreur_compilateur_1.png"> <!-- .element: class="fragment" data-fragment-index="2" -->
+
+----
+### The compiler ❤️
+
+<span class="fragment" data-fragment-index="1">
+
+```rust
+fn say(message: String) {
+    println!("{}", message);
+}
+
+fn main() {
+    let message = String::from("hey");
+    say(message);
+    say(message);
+}
+```
+</span>
+
+<img src="imgs/erreur_compilateur_2.png" style="height: 300px"> <!-- .element: class="fragment" data-fragment-index="2" -->
 
 note:
 
-Being high and low level at the same time levels up the dev's skills
-You learn how to think like a computer while writing expressive code
-
-**It's like some fundamental problem has been solved**
+This kind of hints are everywhere, not only for simple hello world examples
 
 ---
 
@@ -431,10 +507,9 @@ You learn how to think like a computer while writing expressive code
 
 note:
 
-cargo brings almost all the tools you need
+cargo is like npm for NodeJs, it brings almost all the tools you need
 
 There is no debate over which tool, or formatting standard to use
-
 
 ----
 
@@ -462,20 +537,6 @@ keeps examples up to date
 
 ---
 
-<!-- ## AI
-
-When I started, Rust documentation was designed for C++ devs
-
-- ChatGPT
-- Copilot / Codeium
-- [lets get rusty](https://www.youtube.com/@letsgetrusty/)
-
-note:
-
-Helps with functions discovery and paradigm -->
-
-<!-- --- -->
-
 ## Governance
 
 Rust Project
@@ -498,24 +559,7 @@ Breaking changes are opt-in thanks to editions. The same version of Rust can com
 
 ---
 
-<!-- # "How" -->
-
-<!-- ---- -->
-
-<!-- Slide: Rust in Action
-Dive into how Rust addresses the pain points you've identified.
-Discuss Rust's features like ownership, concurrency, and performance, and how they translate to better API development. -->
-
-<!-- --- -->
-
-<!-- Slide: Rust vs. TypeScript
-Compare Rust with TypeScript, focusing on practical differences in API development scenarios. -->
-
-<!-- --- -->
-
-### "Benefits"
-
----
+### Benefits
 
 When it compiles, it runs <!-- .element: class="fragment" data-fragment-index="1" -->
 
@@ -532,34 +576,22 @@ What does correctly mean ?
 - secure
 - scales
 
+----
 
-In terms of effort to make it correct
-Everywhere else there's writing and proving are like 50/50
-Proving includes Unit tests, Integration tests, with a QA.
-Everything around the runtime which has to be taken care of but does not directly serve the user
-The problem with TypeScript is that it gives the illusion you're now at 75/25 of writing vs running
-But you're not.
-TS lets you write code faster, but it's still 50/50
+<img src="imgs/compare_effort.png" style="height: 450px">
 
-Most of the time it's ok, because we want to move fast. And the drawbacks are not that big
+note:
+Usually you spend 50% of efforts writing and 50% proving the code works
+Proving includes Unit tests, Integration tests, with a QA
+or in production ...
+The problem with TypeScript is that it gives the illusion you're now at 75/25 of writing vs proving
+But you are not.
+TS lets you write code faster, but it's still 50/50 because of the types getting in your way
+
+Most of the time it's ok, because we want to move fast. And the drawbacks are not that big.
 We just need to be aware of it.
 
 So the compiler and the particular syntax checks a ton of problems
-
-Slide: The Rust Advantage
-Highlight the key benefits of using Rust – reliability, efficiency, and cost savings.
-
----
-
-## Success Stories
-
-Share case studies or examples where Rust has been successfully used to build robust APIs.
-
-projects :
-- [Discord](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)
-- Cloudflare
-- Github
-- [others](https://github.com/omarabid/rust-companies)
 
 ---
 
@@ -569,6 +601,7 @@ projects :
 - It's an other paradigm
 - Challenging to learn
 - Build time
+- work with external libraries
 
 note:
 
@@ -580,33 +613,10 @@ It was challenging to me. But lately I find more and more resources I wish I had
 So today I feel like it's not that hard anymore. Espceially with ChatGPT and Copilot.
 I'll leave some links in the end and you can come to me, or even leave a tweet if you're interested
 
----
-
-### "When and Where"
-
-----
-
-<img src="imgs/theos-chart.png" style="height: 600px">
-
-[Source](https://www.youtube.com/watch?v=Wy-y75mMRg4)
-
-note:
-
-theo explains accurately that lots of projects starting don't know what they will look like in the end
-
-So it's better to start using the most flexible tools in order to pivot easily.
-
-Ability to find the product marker fit.
-
-At this moment juste use flexible stacks like typescript and abstract problems using ready to go services
-
-But when the projects finds its way, then the new need is performance and stability over flexibility
-
-And Rust is perfect at this job
-
-You can rewrite now and let it run for years without problems. And then come back with some new features
-
-With the confidence that you won't break something unexpected.
+Integrating libraries often involves complying with layers of abstraction.
+When learning and errors occur, the pile of abstraction can make it hard to understand, what the interface wants from us.
+Then the source code is Rust, and often well documented, function by function.
+So you can always find a solution
 
 ---
 
@@ -622,9 +632,7 @@ With the confidence that you won't break something unexpected.
 
 ---
 
-### Get started: as dev
-
-- Books : official, google, lets get rusty
+### Get started as dev
 
 - [Rust book](https://doc.rust-lang.org/book/)
 - [Rust by example](https://doc.rust-lang.org/stable/rust-by-example/)
@@ -634,41 +642,41 @@ With the confidence that you won't break something unexpected.
 - [Noboilerplate - Youtube](https://www.youtube.com/c/NoBoilerplate)
 - [Code to the moon - Youtube](https://www.youtube.com/@codetothemoon/videos)
 - [Roadmap](https://roadmap.sh/rust)
+- lets get rusty
 
 ---
 
-<!-- Show archi to go for
+### "When and Where"
 
-- REST : [axum](https://github.com/graphql-rust/juniper)
-- GraphQl : [juniper](https://github.com/graphql-rust/juniper)
-- ***
+----
 
-Slide: Getting Started with Rust
-Offer guidance on when and where to start incorporating Rust into API development.
-Provide resources for learning Rust and integrating it into existing projects. -->
+<img src="imgs/theos-chart.png" style="height: 600px">
 
-<!-- --- -->
+[Source](https://www.youtube.com/watch?v=Wy-y75mMRg4)
 
-## TBD : Conclude with "Future Vision"
+note:
 
-Slide: The Future of API Development
-Paint a picture of the future where Rust plays a key role in API development.
-Inspire your audience to be part of this future.
+let's conclude with this chart
+
+It has been drawn by a software enginner named theo, which focus is building things as fast as possible, to quickly achieve product market fit.
+
+theo explains accurately that lots of projects starting don't know what they will look like in the end
+
+So it's better to start using the most flexible tools in order to pivot easily.
+
+At this point just use flexible stacks like typescript and abstract problems using ready to go services
+
+But when the project finds its way, then the new need is performance and stability over flexibility
+
+And Rust is perfect at this job
+
+You can rewrite now and have it run for years without problems. And whenever you come back with some new features.
+
+You'll integrate them with the confidence that you won't break things.
 
 ---
 
 ## Q&A
-
-Slide: Open for Questions
-Encourage audience engagement and address any queries or concerns.
-
----
-
-## Conclusion
-
-recap
-
-Say again the main idea
 
 ---
 
