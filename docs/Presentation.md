@@ -134,29 +134,19 @@ TypeScript
 
 ----
 
-- banking
-- insurances
-- healthcare
-- worldwide scale
-- data privacy
+|Stakes|Needs|
+|-------|-------|
+|worldwide scale<br>privacy<br>market competition<br>environment<br><br>human lives|sclability<br>security<br>functionality <br>computation time<br>memory footprint<br>safety|
 
-----
-
-<!-- Emphasize the importance of reliability, speed, and cost-effectiveness in API development. -->
-
-<!-- The stakes of software are increasingly complex. -->
-
-- stability
-- memory footprint
-- computation
-- functionality
-- security
+note:
 
 space: memory footprint
 time: execution speed, startup time
 functionality: quantity of functionality, you need to refactor
 security: quantity of bugs possible increase, and each failure or bug can impact millions
 
+safety :  refers to the ability of a system to operate without causing harm or unintended consequences to people or the environment. It's about the system's internal behavior and its impact. The system needs to be fault tolerant
+security : protecting systems from malicious attacks and unauthorized access. It's about external threats and the system's ability to defend against them.
 ---
 
 ## Introducing Rust
