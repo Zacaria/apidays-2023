@@ -104,11 +104,10 @@ Especially when trying to integrate static typed backends the dynamically typed 
 
 <img src="imgs/ts-superset.jpeg" alt="ts as a super set of js schema" style="height: 400px">
 
-
+- IDE Developer experience
 - OOP patterns
 - compiler checks
 - type system
-- IDE Developer experience
 
 note:
 
@@ -128,12 +127,13 @@ At 4am when problems wake you up, it's JavaScript that you have to deal with.
 
 ## Pain points
 
-- types disappear at runtime
 - does not save you from dealing with JS
-- adds complexity
+- adds types managements
+- adds static layer onto dynamic layer
+- types disappear at runtime
 - no semver
 
-**JSDoc is enough to get max value without overhead** <!-- .element: class="fragment" data-fragment-index="1" -->
+**JSDoc answers to precise problem of hinting types without getting in your way** <!-- .element: class="fragment" data-fragment-index="1" -->
 
 note:
 
@@ -162,7 +162,7 @@ At first it was on optional boost to our lives
 
 |Stakes| Needs|
 |-------|-------|
-|worldwide scale<br>privacy<br>market competition<br>environment<br><br>human lives|sclability<br>security<br>functionality <br>computation time<br>memory footprint<br>safety|
+|worldwide scale<br>privacy<br>market competition<br>environment<br><br>human lives|scalability<br>security<br>functionality <br>computation time<br>memory footprint<br>safety|
 
 note:
 
@@ -181,7 +181,7 @@ _Fast, Reliable, Productive: pick three._
 
 ---
 
-## Stability
+## Stable
 
 ----
 
