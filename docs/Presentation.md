@@ -102,8 +102,9 @@ Especially when trying to integrate static typed backends the dynamically typed 
 
 ### Typescript
 
-<img src="imgs/ts-superset.jpeg" alt="ts as a super set of js schema" style="height: 400px">
+<img src="imgs/ts-superset.jpeg" alt="ts as a super set of js schema" style="height: 200px">
 
+benefits:
 - IDE Developer experience
 - OOP patterns
 - compiler checks
@@ -252,10 +253,10 @@ Linux: [The Kernel](https://linux.developpez.com/actu/337316/Rust-for-Linux-est-
 
 <img src="imgs/linus-logo.webp" style="height: 250px">
 
-- 2/3 of vunerabilities come from memory management <!-- .element: class="fragment" data-fragment-index="1" -->
-- Kernel is in C and Assembly <!-- .element: class="fragment" data-fragment-index="2" -->
-- Linus Torvalds : C++   <!-- .element: class="fragment" data-fragment-index="3" -->
-- attract young devs <!-- .element: class="fragment" data-fragment-index="4" -->
+- attract young devs <!-- .element: class="fragment" data-fragment-index="1" -->
+- 2/3 of vunerabilities come from memory management <!-- .element: class="fragment" data-fragment-index="2" -->
+- Kernel is in C and Assembly <!-- .element: class="fragment" data-fragment-index="3" -->
+- Linus Torvalds : C++ 🙅‍♂️  <!-- .element: class="fragment" data-fragment-index="4" -->
 
 note:
 
@@ -265,8 +266,7 @@ To continue development after C, has started using Rust, as well as Microsoft fo
 
 That's a big sign of trust towards the whole ecosystem
 
-<!-- - Linux project
-- [Microsoft](https://msrc.microsoft.com/blog/2019/07/a-proactive-approach-to-more-secure-code/) project -->
+- [Microsoft](https://msrc.microsoft.com/blog/2019/07/a-proactive-approach-to-more-secure-code/)
 
 ---
 
@@ -276,9 +276,9 @@ That's a big sign of trust towards the whole ecosystem
 
 <img src="imgs/comparison.png" style="height: 450px">
 
-note:
+[2017 : Energy efficiency accross programing languages](https://greenlab.di.uminho.pt/wp-content/uploads/2017/10/sleFinal.pdf)
 
-[Energy efficiency accross programing languages](https://greenlab.di.uminho.pt/wp-content/uploads/2017/10/sleFinal.pdf)
+note:
 
 Energy measured using a framework (Computer Language Benchmarks Game) designed for running testing and comparing solutions to problems
 
@@ -338,6 +338,8 @@ For the devs, that's the purpose of ownership
 
 <img src="imgs/comparison.png" style="height: 450px">
 
+[2017 : Energy efficiency accross programing languages](https://greenlab.di.uminho.pt/wp-content/uploads/2017/10/sleFinal.pdf)
+
 note:
 
 - CPU and RAM consumption
@@ -352,9 +354,11 @@ And Intel's Running Average Power Limit (RAPL) tool which can measure energy con
 
 ----
 
-### AWS Lambda
+### AWS
 
-- [Firecracker](https://firecracker-microvm.github.io/)
+Lambdas are micro VMs built on [Firecracker](https://firecracker-microvm.github.io/)
+
+In Rust
 
 ---
 
@@ -380,6 +384,17 @@ From my perspective that's a good recruitment argument
 As a more difficult than average technology
 By recruiting Rust developers you get higher than average devs
 Rust teachings can be used even outside of the language
+
+----
+
+#### TBD : Growing community
+
+https://aws.amazon.com/fr/blogs/opensource/sustainability-with-rust/
+
+https://www.slashdata.co/blog/state-of-the-developer-nation-23rd-edition-the-fall-of-web-frameworks-coding-languages-blockchain-and-more
+
+
+
 
 ----
 
