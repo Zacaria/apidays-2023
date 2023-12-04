@@ -108,6 +108,7 @@ Especially when trying to integrate static typed backends the dynamically typed 
 - OOP patterns
 - compiler checks
 - type system
+- ease management of big codebase
 
 note:
 
@@ -177,7 +178,7 @@ security : protecting systems from malicious attacks and unauthorized access. It
 
 ## Introducing Rust
 
-_Fast, Reliable, Productive: pick three._
+_Fast, Reliable, Productive: pick three_
 
 ---
 
@@ -253,7 +254,7 @@ Linux: [The Kernel](https://linux.developpez.com/actu/337316/Rust-for-Linux-est-
 
 - 2/3 of vunerabilities come from memory management <!-- .element: class="fragment" data-fragment-index="1" -->
 - Kernel is in C and Assembly <!-- .element: class="fragment" data-fragment-index="2" -->
-- Linus Torvalds : ❌ C++ ❌ <!-- .element: class="fragment" data-fragment-index="3" -->
+- Linus Torvalds : C++   <!-- .element: class="fragment" data-fragment-index="3" -->
 - attract young devs <!-- .element: class="fragment" data-fragment-index="4" -->
 
 note:
@@ -402,6 +403,7 @@ It's a safe bet on the technical aspect
 
 ### Features
 
+- static types & inference
 - compiled
 - no GC
 - compiler developed in Rust
@@ -414,7 +416,7 @@ It's a safe bet on the technical aspect
 
 note:
 
-- compiled : so it produces a specific output for each architecture
+- compiled
 - no GC : memory is managed via a deterministic system called Borrow checker
 - compiler developed in Rust: you can always go look and see what happens, it's very well explained
 - zero cost high level functions like map or filter are compiled to the same output as imperative loops
