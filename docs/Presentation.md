@@ -658,6 +658,34 @@ But you can be assured that the complexity won't go exponential like in JS/TS ec
 
 ---
 
+### Project lifetime
+
+----
+
+<img src="imgs/theos-chart.png" style="height: 550px">
+
+[Source](https://www.youtube.com/watch?v=Wy-y75mMRg4)
+
+note:
+
+This is projects timelineas been drawn by a software enginner named Theo which also appears on Youtube. He focuses is building things as fast as possible, to quickly achieve product market fit.
+
+His point of view is often opposed to an other guy named ThePrimagean. He focuses on performance and correctness
+
+Theo explains accurately that lots of projects starting don't know what they will look like in the end
+
+So it's better to start using the most flexible tools in order to pivot easily.
+
+At this point just use flexible stacks like typescript, and abstract problems using ready to go services.
+
+But when the project finds its way, then the new need is performance and stability over flexibility
+
+And Rust is perfect at this job. As we saw with the different case studies, projects didn't pop in Rust first.
+
+It rather found it's way in the market. Then when performance or security problems became to big. Then they rewrote in Rust
+
+---
+
 ### Get started as dev
 
 - [Rust book](https://doc.rust-lang.org/book/) - reference
@@ -708,34 +736,6 @@ Slides : [https://havesome-rust-apidays.surge.sh](https://havesome-rust-apidays.
 ---
 
 ## Q&A
-
----
-
-### Projects lifetime
-
-----
-
-<img src="imgs/theos-chart.png" style="height: 550px">
-
-[Source](https://www.youtube.com/watch?v=Wy-y75mMRg4)
-
-note:
-
-It has been drawn by a software enginner named theo which also appears on Youtube. He focuses is building things as fast as possible, to quickly achieve product market fit.
-
-His point of view is often opposed to an other guy named ThePrimagean. He focuses on performance and correctness
-
-Theo explains accurately that lots of projects starting don't know what they will look like in the end
-
-So it's better to start using the most flexible tools in order to pivot easily.
-
-At this point just use flexible stacks like typescript, and abstract problems using ready to go services.
-
-But when the project finds its way, then the new need is performance and stability over flexibility
-
-And Rust is perfect at this job. As we saw with the different case studies, projects didn't pop in Rust first.
-
-It rather found it's way in the market. Then when performance or security problems became to big. Then they rewrote in Rust
 
 ---
 
