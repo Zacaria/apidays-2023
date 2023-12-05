@@ -130,7 +130,7 @@ note:
 
 So TypeScript came as a superset of javascript. Bringing types, checks and better code discoverability. overall better developer experience
 
-The problem is that often, projects us build a complete sidesystem of types around the functionalities.
+The problem is that often, project teams build a complete sidesystem of types around the functionalities.
 
 Costing time and effort just to please the compiler.
 
@@ -149,19 +149,8 @@ At 4am when problems wake you up, it's JavaScript that you have to deal with.
 - does not save you from dealing with JS
 - adds types management
 - adds static layer onto dynamic layer
-- no semver
 
 **JSDoc answers to the precise problem of hinting types without getting in your way** <!-- .element: class="fragment" data-fragment-index="1" -->
-
-note:
-
-no semver is quite important
-
-It's a way to synchronize with the ecosystem.
-
-It's not normal to have breaking changes in minor version bumps.
-
-And it feels strange to have to point it out
 
 ---
 
@@ -201,6 +190,10 @@ security : protecting systems from malicious attacks and unauthorized access. It
 
 _Fast, Reliable, Productive: pick three_
 
+note:
+
+So now, let's talk about Rust
+
 ---
 
 ## Stable
@@ -219,8 +212,9 @@ note:
 
 Let's bring again the billion dollar mistake. We need the idea of nothing
 
-But when a value is unexpectedly null or undefined
-That's an invalid state
+But when a value is unexpectedly null or undefined.
+
+That's an invalid state, and we do not need this.
 
 ----
 
@@ -379,6 +373,7 @@ And Intel's Running Average Power Limit (RAPL) tool which can measure energy con
 
 
 45 million repos
+
 28 TB of unique content
 
 
@@ -407,8 +402,8 @@ And Intel's Running Average Power Limit (RAPL) tool which can measure energy con
 <img src="imgs/discord-logo.png" style="background-color: red; height: 70px">
 
 
-- Cache of a few billion entries <!-- .element: class="fragment" data-fragment-index="1" -->
-- Every connection, message sent and read... <!-- .element: class="fragment" data-fragment-index="2" -->
+- cache of a few billion entries <!-- .element: class="fragment" data-fragment-index="1" -->
+- every connection, message sent and read... <!-- .element: class="fragment" data-fragment-index="2" -->
 - latences every 2 minutes because of Go Garbage collector <!-- .element: class="fragment" data-fragment-index="3" -->
 
 <img src="imgs/discord_rex.png" style="height: 250px"> <!-- .element: class="fragment" data-fragment-index="4" -->
@@ -442,7 +437,7 @@ note:
 
 - less maintenance with less bugs
 
-- the learning curve is steep in the beginning, but then it tends to get easier. There is not this ecosystem craziness like in JS
+- the learning curve is steep in the beginning, but then it tends to get easier.
 
 [Energy efficiency accross programing languages](https://greenlab.di.uminho.pt/wp-content/uploads/2017/10/sleFinal.pdf)
 
@@ -467,11 +462,12 @@ There is currently a high entry barrier in this domain.
 
 Most of Rust projects require senior C++ dev
 
-Otherwise there are risky volatile Web3 projects
+Otherwise a lot of Web3 projects have put their trust in Rust
 
 From my perspective that's a good recruitment argument
 
-As a more difficult than average technology
+As a more difficult than average technology.
+
 By recruiting Rust developers you get better than average devs as Rust teachings can be used even outside of the language
 
 ----
@@ -504,6 +500,8 @@ https://www.slashdata.co/blog/state-of-the-developer-nation-23rd-edition-the-fal
 => There is no blackbox between you and the machine <!-- .element: class="fragment" data-fragment-index="1" -->
 
 => Better predictability <!-- .element: class="fragment" data-fragment-index="2" -->
+
+=> Awesome developer experience <!-- .element: class="fragment" data-fragment-index="3" -->
 
 note:
 
@@ -661,8 +659,7 @@ So today I feel like it's not that hard anymore. Especially with ChatGPT and Cop
 Like in TypeScript, integrating libraries often involves complying with layers of abstraction.
 When you're learning and errors occur, the pile of abstraction can make it hard to understand, what the interface wants from you.
 
-Then the source code is Rust, and often well documented, function by function.
-So you can always find a solution
+And this is just a matter of experience in the ecosystem
 
 [Productivity study](https://blog.rust-lang.org/2020/12/16/rust-survey-2020.html)
 
@@ -709,7 +706,15 @@ But you can be assured that the complexity won't go exponential like in JS/TS ec
 
 note:
 
-You can build REST, GraphQL, gRPC APIs, frontends, desktop apps, mobile apps
+You can build REST, GraphQL, gRPC APIs
+
+You can build frontends, desktop apps, mobile apps thanks to WebAssembly
+
+You can even integrate it in your TS codebase as a module.
+
+If you have a specific part struggling in terms of performance, you can easily integrate it.
+
+I truly believe Rust can solve your problems
 
 ---
 
