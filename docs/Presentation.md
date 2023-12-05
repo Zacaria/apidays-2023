@@ -48,7 +48,7 @@ note:
 
 But today I'm going to suggest you to
 
-Forget Typescript and choose Rust to build your Robust, fast, and cheap APIs
+Forget TypeScript and choose Rust to build your Robust, fast, and cheap APIs
 
 It's not a tutorial, I'll try to give maximum elements to help guide your decision making.
 
@@ -114,7 +114,7 @@ The feeling of safety was no more.
 
 ----
 
-### Typescript
+### TypeScript
 
 <img src="imgs/ts-superset.jpeg" alt="ts as a super set of js schema" style="height: 200px">
 
@@ -130,9 +130,11 @@ note:
 
 So TypeScript came as a superset of javascript. Bringing types, checks and better code discoverability. overall better developer experience
 
-The greed, we can all be guilty of, can even let us build a complete typed sidesystem around our functionalities.
+The problem is that often, projects us build a complete sidesystem of types around the functionalities.
 
-Costing time and effort just to please the compiler. Don't even ask to change a type deeply buried into layer of inheritance or other abstractions.
+Costing time and effort just to please the compiler.
+
+Don't even ask to change a type deeply buried into layer of inheritance or other abstractions.
 
 Unfortunately, what TS brings fades just after the compilation.
 
@@ -182,7 +184,7 @@ At first it was on optional boost to our lives
 
 <br>
 
-#### Typescript is not enough <!-- .element: class="fragment" data-fragment-index="1" -->
+#### TypeScript is not enough <!-- .element: class="fragment" data-fragment-index="1" -->
 
 note:
 
@@ -503,8 +505,6 @@ https://www.slashdata.co/blog/state-of-the-developer-nation-23rd-edition-the-fal
 
 => Better predictability <!-- .element: class="fragment" data-fragment-index="2" -->
 
-=> Awesome developer experience <!-- .element: class="fragment" data-fragment-index="3" -->
-
 note:
 
 - compiled
@@ -776,3 +776,124 @@ Breaking changes are opt-in thanks to editions.
 The same version of Rust can compile different editions.
 
 Any crate can specify an edition.
+
+---
+
+### Ownership rules
+
+- Only one variable owns data at a time  <!-- .element: class="fragment" data-fragment-index="1" -->
+- Multiple readers or one writer <!-- .element: class="fragment" data-fragment-index="2" -->
+
+=> Memory is freed as soon as variable is out of scope<!-- .element: class="fragment" data-fragment-index="3" -->
+
+**It's like a fundamental problem has been solved**<!-- .element: class="fragment" data-fragment-index="4" -->
+
+note:
+
+pas de pause
+
+pas de GC
+
+pas de référence vers rien, pas de undefined
+
+----
+
+### Borrow checker 
+
+guarantees by default:
+
+- No memory leaks
+- No use-after-free
+- No dangling pointers
+- Runtime type system
+
+note:
+
+The borrow checker is the system that enforces the rules of ownership
+
+----
+
+### The compiler ❤️
+
+<span class="fragment" data-fragment-index="1">
+
+```rust
+fn say(message: &str) {
+    println!(message);
+}
+
+fn main() {
+    let message = "hey";
+    say(message);
+}
+```
+</span>
+
+<img src="imgs/erreur_compilateur_1.png"> <!-- .element: class="fragment" data-fragment-index="2" -->
+
+----
+### The compiler ❤️
+
+<span class="fragment" data-fragment-index="1">
+
+```rust
+fn say(message: String) {
+    println!("{}", message);
+}
+
+fn main() {
+    let message = String::from("hey");
+    say(message);
+    say(message);
+}
+```
+</span>
+
+<img src="imgs/erreur_compilateur_2.png" style="height: 300px"> <!-- .element: class="fragment" data-fragment-index="2" -->
+
+note:
+
+This kind of hints are everywhere, not only for simple hello world examples
+
+----
+
+### Tools
+
+- cargo test : IT, UT
+- cargo fmt
+- cargo bench
+- clippy : lint
+- bacon : reload
+- rust-analyzer : IDE developer experience
+
+note:
+
+cargo is like npm for NodeJs, it brings almost all the tools you need
+
+There is no debate over which tool, or formatting standard to use
+
+----
+
+#### Cargo doc stays up to date
+
+```rust [|6-7|]
+/// Formats the sum of two numbers as a string.
+///
+/// # Examples
+///
+/// ```
+/// let result = mycrate::sum_as_string(5, 10);
+/// assert_eq!(result, "15");
+/// ```
+pub fn sum_as_string(a: i32, b: i32) -> String { (a + b).to_string() }
+```
+
+`cargo doc --open`
+
+note:
+
+coverage
+executed during tests
+keeps examples up to date
+
+---
