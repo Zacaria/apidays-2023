@@ -494,7 +494,7 @@ https://www.slashdata.co/blog/state-of-the-developer-nation-23rd-edition-the-fal
 - compiled
 - no GC
 - compiler developed in Rust
-- low and high level : compilation with zero cost abstraction
+- low and high level : zero cost abstraction
 - no manual memory management : Ownership & Borrow checker
 
 => There is no blackbox between you and the machine <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -532,41 +532,6 @@ pas de GC
 pas de référence vers rien, pas de undefined
 
 ----
-
-### Borrow checker 
-
-guarantees by default:
-
-- No memory leaks
-- No use-after-free
-- No dangling pointers
-- Runtime type system
-
-note:
-
-The borrow checker is the system that enforces the rules of ownership
-
-----
-
-### The compiler ❤️
-
-<span class="fragment" data-fragment-index="1">
-
-```rust
-fn say(message: &str) {
-    println!(message);
-}
-
-fn main() {
-    let message = "hey";
-    say(message);
-}
-```
-</span>
-
-<img src="imgs/erreur_compilateur_1.png"> <!-- .element: class="fragment" data-fragment-index="2" -->
-
-----
 ### The compiler ❤️
 
 <span class="fragment" data-fragment-index="1">
@@ -588,13 +553,29 @@ fn main() {
 
 note:
 
+Let's look at how the compiler guides you
+
+In rust you don't give a reference to a function
+
+You give ownership
+
+Just look at this beautiful error message
+
+It tells you where is the error message
+
+Why is it an error
+
+And even hints you how to solve this
+
 This kind of hints are everywhere, not only for simple hello world examples
+
+Tell me now, who wants to go back to stacktraces ?
 
 ----
 
 ### Tools
 
-- cargo test : IT, UT
+- cargo test : Integration Tests, Unit Ttests
 - cargo fmt
 - cargo bench
 - clippy : lint
@@ -627,9 +608,9 @@ pub fn sum_as_string(a: i32, b: i32) -> String { (a + b).to_string() }
 
 note:
 
-coverage
-executed during tests
-keeps examples up to date
+This generates a full website documentation
+
+And yes, the test in the comments are compiled
 
 ---
 
