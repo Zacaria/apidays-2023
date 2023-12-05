@@ -202,7 +202,7 @@ I believe that ultra stability of backend APIs will enable an other leap for our
 
 ----
 
-<img src="imgs/billion-dollar-mistake.jpg" style="height: 250px">
+<img src="imgs/billion-dollar-mistake.jpg" style="height: 350px">
 
 note:
 
@@ -216,7 +216,7 @@ That's an invalid state
 ### enums
 
 ```rust
-// full code of the solution to the billion dollar mistakge
+// full code of the solution to the billion dollar mistake
 // included in the standard library
 enum Option<T> {
     None,
@@ -550,7 +550,7 @@ note:
 
 The borrow checker is the system that enforces the rules of ownership
 
----
+----
 
 ### The compiler ❤️
 
@@ -594,7 +594,7 @@ note:
 
 This kind of hints are everywhere, not only for simple hello world examples
 
----
+----
 
 ### Tools
 
@@ -670,6 +670,7 @@ Any crate can specify an edition.
 - takes 3 to 6 months to become productive
 - build time
 - work with external libraries
+- ecosystem calmer than JS
 
 note:
 
@@ -684,59 +685,76 @@ It's an other paradigm to embrace that really empowers developers even when usin
 It was challenging to me. But lately I find more and more resources I wish I had when I started.
 So today I feel like it's not that hard anymore. Especially with ChatGPT and Copilot.
 
-Integrating libraries often involves complying with layers of abstraction.
-When learning and errors occur, the pile of abstraction can make it hard to understand, what the interface wants from us.
+Like in TypeScript, integrating libraries often involves complying with layers of abstraction.
+When you're learning and errors occur, the pile of abstraction can make it hard to understand, what the interface wants from you.
+
 Then the source code is Rust, and often well documented, function by function.
 So you can always find a solution
 
 [Productivity study](https://blog.rust-lang.org/2020/12/16/rust-survey-2020.html)
 
+----
+
+> In other languages simple things are easy and complex things are possible, in Rust simple things are possible and complex things are EASY.
+
+<img src="imgs/project_complexity.jpg" style="height:400px">
+
+note:
+
+There a few simple things that are complex in the beginning
+
+But you can be assured that the complexity won't go exponential like in JS/TS ecosystem
+
+---
+
+### Get started as dev
+
+- [Rust book](https://doc.rust-lang.org/book/) - reference
+- [Rust by example](https://doc.rust-lang.org/stable/rust-by-example/) - condensed reference
+- [Rustlings](https://github.com/rust-lang/rustlings) - exercises
+- [A half-hour to learn Rust](https://fasterthanli.me/articles/a-half-hour-to-learn-rust) - quick walkthrough
+- [Comprehensive Rust by Google](https://google.github.io/comprehensive-rust/) - complete walkthrough
+- [Noboilerplate](https://www.youtube.com/c/NoBoilerplate) - quick videos
+- [Code to the moon](https://www.youtube.com/@codetothemoon/videos) - longer videos
+- [Let's get rusty](https://letsgetrusty.com/)- Youtube & paid bootcamp - not sponsored 
+- [Awesome Rust](https://github.com/rust-unofficial/awesome-rust) - keywords discovery
+- [Roadmap](https://roadmap.sh/rust) - keywords discovery
 
 ---
 
 ### Get started as manager
 
-- find dev interested in Rust: there are a lot
-- start with simple projects:
+- find dev interested in Rust: there are a lot <!-- .element: class="fragment" data-fragment-index="1" -->
+- start with simple projects: <!-- .element: class="fragment" data-fragment-index="2" -->
   - CLI
   - lambdas
   - microservice
   - network app
   - devops tools
 
----
-
-### Get started as dev
-
-- [Rust book](https://doc.rust-lang.org/book/)
-- [Rust by example](https://doc.rust-lang.org/stable/rust-by-example/)
-- [Rustlings](https://github.com/rust-lang/rustlings)
-- [Comprehensive Rust by Google](https://google.github.io/comprehensive-rust/)
-- [fasterthanlime - A half-hour to learn Rust](https://fasterthanli.me/articles/a-half-hour-to-learn-rust)
-- [Noboilerplate - Youtube](https://www.youtube.com/c/NoBoilerplate)
-- [Code to the moon - Youtube](https://www.youtube.com/@codetothemoon/videos)
-- [Let's get rusty - Youtube & paid bootcamp](https://letsgetrusty.com/)
-- [Roadmap](https://roadmap.sh/rust)
-
-----
-
-> In other languages simple things are easy and complex things are possible, in Rust simple things are possible and complex things are EASY.
-
-<img src="imgs/learning_curve.jpg" style="height:450px">
+[Make the world a safer, faster and sustainable place](https://aws.amazon.com/fr/blogs/opensource/sustainability-with-rust/) <!-- .element: class="fragment" data-fragment-index="3" -->
 
 note:
 
-The struggle noted in the beginning only comes from the paradigm adaptation
-
-Otherwise, the completeness of syntax makes it easy to solve difficult problems
+You can build REST, GraphQL, gRPC APIs, frontends, desktop apps, mobile apps
 
 ---
 
-### "Let's conclude"
+### Thank you
+
+<img src="imgs/crab2.png" style="height: 30vh">
+
+---
+
+## Q&A
+
+---
+
+### Projects lifetime
 
 ----
 
-<img src="imgs/theos-chart.png" style="height: 600px">
+<img src="imgs/theos-chart.png" style="height: 550px">
 
 [Source](https://www.youtube.com/watch?v=Wy-y75mMRg4)
 
@@ -752,22 +770,11 @@ Theo explains accurately that lots of projects starting don't know what they wil
 
 So it's better to start using the most flexible tools in order to pivot easily.
 
-At this point just use flexible stacks like typescript, and abstract problems using ready to go services
+At this point just use flexible stacks like typescript, and abstract problems using ready to go services.
 
 But when the project finds its way, then the new need is performance and stability over flexibility
 
-And Rust is perfect at this job
+And Rust is perfect at this job. As we saw with the different case studies, projects didn't pop in Rust first.
 
-You can rewrite now and have it run for years without problems. And whenever you come back with some new features.
+It rather found it's way in the market. Then when performance or security problems became to big. Then they rewrote in Rust
 
-You'll integrate them with the confidence that you won't break things.
-
----
-
-### Thank you
-
-<img src="imgs/crab2.png" style="height: 30vh">
-
----
-
-## Q&A
