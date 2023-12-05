@@ -22,7 +22,7 @@
     "reveal-md": "5.5.2"
   },
   "config": {
-    "deploy_domain": "havesome-apidays-2023.surge.sh"
+    "deploy_domain": "https://havesome-rust-apidays.surge.sh"
   },
   "devDependencies": {
     "rimraf": "^2.6.1",
