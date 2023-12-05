@@ -14,11 +14,19 @@ https://havesome-rust-api-day.surge.sh
 
 note:
 
-Started dev and JS 10 years ago
+Started development and JS 10 years ago
+
 And I love it
+
 I love the fact that you can move quickly
+
 The fact that you can use it everywhere
+
 And that's the richest ecosystem ever
+
+Today I'm building ClubMediterranee API in NodeJS
+
+But I'm here to express my own opinions which do not necessarily reflect those of ClubMediterranee
 
 ---
 
@@ -75,28 +83,26 @@ Suddenly, it became really easy to reuse and build upon JS code.
 
 The abstraction was so powerfull that it created a rich ecosystem where JS was a must learn language
 
-Frontend became so complicated that we separated Frontend and Backend.
-
 ----
 
-### Fullstack developers
+### Fullstack
 
-- paradigm clash
-- hard to sync changes between frontend and backend
+- paradigm clash between static and dynamic
+- JS doesn't help you follow strict API interfaces
+
+<img src="imgs/cannot_read_property_of_undefined.png" alt="js error" style="height: 200px"> <!-- .element: class="fragment" data-fragment-index="1" -->
 
 note:
 
-Which were often separated by an API
+Frontend became so complicated that we separated Frontend and Backend using APIs.
 
-Then we merged them again to create the super fullstack developers
+Then we merged the subject again to create the fullstack word
 
-But the Java, dotNet, statically typed developers
+But the Java, dotNet developers trying to create frontend in JS with static type mindsent didn't work well
 
-Hurt themselves to the powerful yet dangerous JavaScript.
+Because in fact JavaScript doesn't help you follow strict interfaces
 
 The feeling of safety was no more.
-
-Especially when trying to integrate static typed backends the dynamically typed frontend.
 
 ----
 
@@ -113,7 +119,7 @@ benefits:
 
 note:
 
-So TypeScript came as a superset. Bringing types, checks and better code discoverability. overall better developer experience
+So TypeScript came as a superset of javascript. Bringing types, checks and better code discoverability. overall better developer experience
 
 The greed, we can all be guilty of, can even let us build a complete typed sidesystem around our functionalities.
 
@@ -132,7 +138,6 @@ At 4am when problems wake you up, it's JavaScript that you have to deal with.
 - does not save you from dealing with JS
 - adds types management
 - adds static layer onto dynamic layer
-- types disappear at runtime
 - no semver
 
 **JSDoc answers to the precise problem of hinting types without getting in your way** <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -172,7 +177,7 @@ At first it was on optional boost to our lives
 
 note:
 
-Now it's an essential part, the stakes are pretty serious
+Now it's an essential part and the stakes are pretty serious
 
 I believe for such use cases, TypeScript is not enough
 
@@ -189,15 +194,50 @@ _Fast, Reliable, Productive: pick three_
 
 ## Stable
 
+note:
+
+The consistency of integrating NodeJS modules enabled the boom of all the frontend applications we know today
+
+I believe that ultra stability of backend APIs will enable an other leap for our society
+
 ----
 
 <img src="imgs/billion-dollar-mistake.jpg" style="height: 250px">
 
 note:
 
-When a value is unexpectedly null or undefined
-That's an unvalid state
-As a system programing language, Rust makes it easy to make invalid state unrepresentable
+Let's bring again the billion dollar mistake. We need the idea of nothing
+
+But when a value is unexpectedly null or undefined
+That's an invalid state
+
+----
+
+### enums
+
+```rust
+// full code of the solution to the billion dollar mistakge
+// included in the standard library
+enum Option<T> {
+    None,
+    Some(T),
+}
+```
+
+```rust
+let item: Option<Item> = get_item();
+
+match item {
+    Some(item) => map_item(item),
+    None => handle_none_case(), // does not compile if omitted
+}
+```
+
+note:
+
+Instead, use the Option enum to represent the idea of nothing
+
+And the compiler will make sure you don't forget to handle this case
 
 ----
 
@@ -212,7 +252,7 @@ let zombie = FakeCat { alive: false, hungry: true }; // ???
 ```
 
 <blockquote class="fragment" data-fragment-index="1">
-We can easily represent systems without invalid states
+Rust makes it easy to make invalid state unrepresentable with enums
 </blockquote>
 
 <span class="fragment" data-fragment-index="2">
@@ -261,6 +301,8 @@ fn read_file(path: &str) -> String {
 
 We need to clarify what could go wrong <!-- .element: class="fragment" data-fragment-index="1" -->
 
+It's even better when it's embedded in the language <!-- .element: class="fragment" data-fragment-index="2" -->
+
 ----
 
 2016 : Do you remember the [left-pad drama](https://qz.com/646467/how-one-programmer-broke-the-internet-by-deleting-a-tiny-piece-of-code) ?
@@ -296,7 +338,7 @@ note:
 
 Let's take an example of someone who is famously hard to please in terms of code.
 
-To continue development after C, has started using Rust, as well as Microsoft for Windows and Google for Android
+To attract youg developers and to solve memory vulnerabilities, Linus has started using Rust, as well as Microsoft for Windows and Google for Android
 
 That's a big sign of trust towards the whole ecosystem
 
@@ -359,10 +401,13 @@ And Intel's Running Average Power Limit (RAPL) tool which can measure energy con
 
 note:
 
+better on every metric
+
 Thanks to no GC
+
 Instead of stopping the world to clean unused memory
-Every variable is cleaned at a precise moment
-For the devs, that's the purpose of ownership
+
+Every variable is cleaned at the precise moment it goes out of scope
 
 ---
 
@@ -370,10 +415,10 @@ For the devs, that's the purpose of ownership
 
 ----
 
-<img src="imgs/comparison.png" style="height: 450px">
+<img src="imgs/comparison.png" style="height: 250px">
 
 - cpu & memory
-- bugs
+- less bugs
 - learning curve
 - less cases to test
 
@@ -389,26 +434,18 @@ note:
 
 Energy measured using a framework (Computer Language Benchmarks Game) designed for running testing and comparing solutions to problems
 
-And Intel's Running Average Power Limit (RAPL) tool which can measure energy consumption of an executed program.----
-
-----
-
-### AWS
-
-Lambdas are micro VMs built on [Firecracker](https://firecracker-microvm.github.io/)
-
-In Rust
+And Intel's Running Average Power Limit (RAPL) tool which can measure energy consumption of an executed program
 
 ---
 
 ### Attractive
 
-<ul>
-<li class="fragment" data-fragment-index="1">Most admired language according to  <a href="https://survey.stackoverflow.co/2023/#section-admired-and-desired-programming-scripting-and-markup-languages">StackOverflow</a> for 8 years !</li>
-<li class="fragment" data-fragment-index="2">JS meetups: people talking about Rust </li>
-<li class="fragment" data-fragment-index="3">More devs available than offers </li>
-<li class="fragment" data-fragment-index="4">Web3 projects </li>
-</ul>
+<!-- <ul> -->
+<span class="fragment" data-fragment-index="1">Most admired language according to  <a href="https://survey.stackoverflow.co/2023/#section-admired-and-desired-programming-scripting-and-markup-languages">StackOverflow</a> for 8 years !</span>
+
+<span class="fragment" data-fragment-index="3">Only place where there is more devs available than offers </span>
+<!-- <li class="fragment" data-fragment-index="4">Web3 projects </li> -->
+<!-- </ul> -->
 
 note:
 
@@ -421,19 +458,23 @@ Otherwise there are risky volatile Web3 projects
 From my perspective that's a good recruitment argument
 
 As a more difficult than average technology
-By recruiting Rust developers you get higher than average devs
-Rust teachings can be used even outside of the language
+By recruiting Rust developers you get better than average devs as Rust teachings can be used even outside of the language
 
 ----
 
-#### TBD : Growing community
+#### Growing community
+
+<img src="imgs/communities_q3_2021.png" style="height: 400px"/>
+
+<img src="imgs/communities_q3_2022.png" style="height: 400px"/>
+
+note:
+
+It also has been the biggest growing community along with Kotlin
 
 https://aws.amazon.com/fr/blogs/opensource/sustainability-with-rust/
 
 https://www.slashdata.co/blog/state-of-the-developer-nation-23rd-edition-the-fall-of-web-frameworks-coding-languages-blockchain-and-more
-
-
-
 
 ----
 
@@ -446,8 +487,6 @@ https://www.slashdata.co/blog/state-of-the-developer-nation-23rd-edition-the-fal
 - Documentation was oriented towards C/C++ devs
 
 note:
-
-[Study](https://blog.rust-lang.org/2020/12/16/rust-survey-2020.html)
 
 As a manager recruiting someone who successfully went through the process of learning Rust
 
@@ -626,26 +665,32 @@ Any crate can specify an edition.
 
 ### Possible struggles
 
-- project moves slower
-- it's an other paradigm
-- challenging to learn
+- projects move slower
+- it's an other paradigm <3
+- takes 3 to 6 months to become productive
 - build time
 - work with external libraries
 
 note:
 
-Moving slower and safer for projects with high stakes, is not necessarily a bad thing when this ensures less bugs after release
+Moves slower because you need to make your code correct to compile.
 
-It's a paradigm that really empowers developers even when using other languages. It touches fundamentals of software engineering
+You can easily take shortcuts when developing, but if you're a serious professional.
+
+You will have to remove them before releasing. The good thing is that the shortcuts are obvious in the code.
+
+It's an other paradigm to embrace that really empowers developers even when using other languages. It touches fundamentals of software engineering
 
 It was challenging to me. But lately I find more and more resources I wish I had when I started.
-So today I feel like it's not that hard anymore. Espceially with ChatGPT and Copilot.
-I'll leave some links in the end and you can come to me, or even leave a tweet if you're interested
+So today I feel like it's not that hard anymore. Especially with ChatGPT and Copilot.
 
 Integrating libraries often involves complying with layers of abstraction.
 When learning and errors occur, the pile of abstraction can make it hard to understand, what the interface wants from us.
 Then the source code is Rust, and often well documented, function by function.
 So you can always find a solution
+
+[Productivity study](https://blog.rust-lang.org/2020/12/16/rust-survey-2020.html)
+
 
 ---
 
