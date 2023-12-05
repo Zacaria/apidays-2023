@@ -534,8 +534,6 @@ pas de référence vers rien, pas de undefined
 ----
 ### The compiler ❤️
 
-<span class="fragment" data-fragment-index="1">
-
 ```rust
 fn say(message: String) {
     println!("{}", message);
@@ -547,9 +545,8 @@ fn main() {
     say(message);
 }
 ```
-</span>
 
-<img src="imgs/erreur_compilateur_2.png" style="height: 300px"> <!-- .element: class="fragment" data-fragment-index="2" -->
+<img src="imgs/erreur_compilateur_2.png" style="height: 300px">
 
 note:
 
