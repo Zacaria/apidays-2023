@@ -10,7 +10,7 @@ revealOptions:
 
 API Days Paris - Zacaria Chtatar - December 2023
 
-https://havesome-rust-api-day.surge.sh
+https://havesome-rust-apidays.surge.sh
 
 note:
 
@@ -367,10 +367,13 @@ And Intel's Running Average Power Limit (RAPL) tool which can measure energy con
 <img src="imgs/github.png" style="background-color: whitesmoke; height: 150px">
 
 
-45 million repos to index : <!-- .element: class="fragment" data-fragment-index="1" -->
+45 million repos
+28 TB of unique content
 
-- several months with Elasticsearch <!-- .element: class="fragment" data-fragment-index="2" -->
-- 18h in Rust <!-- .element: class="fragment" data-fragment-index="3" -->
+
+- several months with Elasticsearch <!-- .element: class="fragment" data-fragment-index="1" -->
+- 36h with Rust and Kafka <!-- .element: class="fragment" data-fragment-index="1" -->
+- 640 queries /s <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ----
 
@@ -637,36 +640,10 @@ keeps examples up to date
 
 ---
 
-## Governance
-
-[Rust Project](https://www.rust-lang.org/)
-
-[Rust Foundation](https://foundation.rust-lang.org/)
-
-Release every 6 weeks
-
-Backward compatibility
-
-Breaking changes are opt-in thanks to [editions](https://doc.rust-lang.org/edition-guide/editions/)
-
-note:
-
-If code compiled at some point, it's guaranteed to compile later.
-
-There's a [special project](https://github.com/rust-lang/crater) that runs a large number of packages to look for regressions in the compiler
-
-Breaking changes are opt-in thanks to editions.
-
-The same version of Rust can compile different editions.
-
-Any crate can specify an edition.
-
----
-
 ### Possible struggles
 
 - projects move slower
-- it's an other paradigm <3
+- embrace the paradigm
 - takes 3 to 6 months to become productive
 - build time
 - work with external libraries
@@ -744,6 +721,8 @@ You can build REST, GraphQL, gRPC APIs, frontends, desktop apps, mobile apps
 
 <img src="imgs/crab2.png" style="height: 30vh">
 
+Slides : [https://havesome-rust-apidays.surge.sh](https://havesome-rust-apidays.surge.sh)
+
 ---
 
 ## Q&A
@@ -759,8 +738,6 @@ You can build REST, GraphQL, gRPC APIs, frontends, desktop apps, mobile apps
 [Source](https://www.youtube.com/watch?v=Wy-y75mMRg4)
 
 note:
-
-let's conclude with this chart
 
 It has been drawn by a software enginner named theo which also appears on Youtube. He focuses is building things as fast as possible, to quickly achieve product market fit.
 
@@ -778,3 +755,28 @@ And Rust is perfect at this job. As we saw with the different case studies, proj
 
 It rather found it's way in the market. Then when performance or security problems became to big. Then they rewrote in Rust
 
+---
+
+## Governance
+
+[Rust Project](https://www.rust-lang.org/)
+
+[Rust Foundation](https://foundation.rust-lang.org/)
+
+Release every 6 weeks
+
+Backward compatibility
+
+Breaking changes are opt-in thanks to [editions](https://doc.rust-lang.org/edition-guide/editions/)
+
+note:
+
+If code compiled at some point, it's guaranteed to compile later.
+
+There's a [special project](https://github.com/rust-lang/crater) that runs a large number of packages to look for regressions in the compiler
+
+Breaking changes are opt-in thanks to editions.
+
+The same version of Rust can compile different editions.
+
+Any crate can specify an edition.
