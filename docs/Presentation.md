@@ -127,15 +127,15 @@ At 4am when problems wake you up, it's JavaScript that you have to deal with.
 
 ----
 
-## Pain points
+### Pain points
 
 - does not save you from dealing with JS
-- adds types managements
+- adds types management
 - adds static layer onto dynamic layer
 - types disappear at runtime
 - no semver
 
-**JSDoc answers to precise problem of hinting types without getting in your way** <!-- .element: class="fragment" data-fragment-index="1" -->
+**JSDoc answers to the precise problem of hinting types without getting in your way** <!-- .element: class="fragment" data-fragment-index="1" -->
 
 note:
 
@@ -165,6 +165,10 @@ At first it was on optional boost to our lives
 |Stakes| Needs|
 |-------|-------|
 |worldwide scale<br>privacy<br>market competition<br>environment<br><br>human lives|scalability<br>security<br>functionality <br>computation time<br>memory footprint<br>safety|
+
+<br>
+
+#### Typescript is not enough <!-- .element: class="fragment" data-fragment-index="1" -->
 
 note:
 
@@ -197,7 +201,37 @@ As a system programing language, Rust makes it easy to make invalid state unrepr
 
 ----
 
-What's wrong with this code ?
+```rust
+struct FakeCat {
+    alive: bool,
+    hungry: bool,
+}
+
+let zombie = FakeCat { alive: false, hungry: true }; // ???
+
+```
+
+<blockquote class="fragment" data-fragment-index="1">
+We can easily represent systems without invalid states
+</blockquote>
+
+<span class="fragment" data-fragment-index="2">
+
+```rust
+enum RealCat {
+    Alive { hungry: bool }, // enums can contain structs
+    Dead,
+}
+```
+</span>
+
+note:
+
+In other languages we should implement getters, setters and think of absurd cases to protect the system from invalid states
+
+----
+
+What's wrong with this TS snippet ?
 
 ```ts
 function readFile(path: string): string {
@@ -225,7 +259,7 @@ fn read_file(path: &str) -> String {
 }
 ```
 
-Clarify what could go wrong
+We need to clarify what could go wrong <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ----
 
@@ -338,13 +372,18 @@ For the devs, that's the purpose of ownership
 
 <img src="imgs/comparison.png" style="height: 450px">
 
-[2017 : Energy efficiency accross programing languages](https://greenlab.di.uminho.pt/wp-content/uploads/2017/10/sleFinal.pdf)
+- cpu & memory
+- bugs
+- learning curve
+- less cases to test
 
 note:
 
 - CPU and RAM consumption
 
-- Less maintenance with less bugs
+- less maintenance with less bugs
+
+- the learning curve is steep in the beginning, but then it tends to get easier. There is not this ecosystem craziness like in JS
 
 [Energy efficiency accross programing languages](https://greenlab.di.uminho.pt/wp-content/uploads/2017/10/sleFinal.pdf)
 
@@ -443,7 +482,7 @@ note:
 ### Ownership rules
 
 - Only one variable owns data at a time  <!-- .element: class="fragment" data-fragment-index="1" -->
-- Multiple readers or one editor <!-- .element: class="fragment" data-fragment-index="2" -->
+- Multiple readers or one writer <!-- .element: class="fragment" data-fragment-index="2" -->
 
 => Memory is freed as soon as variable is out of scope<!-- .element: class="fragment" data-fragment-index="3" -->
 
@@ -633,6 +672,18 @@ So you can always find a solution
 - [Code to the moon - Youtube](https://www.youtube.com/@codetothemoon/videos)
 - [Let's get rusty - Youtube & paid bootcamp](https://letsgetrusty.com/)
 - [Roadmap](https://roadmap.sh/rust)
+
+----
+
+> In other languages simple things are easy and complex things are possible, in Rust simple things are possible and complex things are EASY.
+
+<img src="imgs/learning_curve.jpg" style="height:450px">
+
+note:
+
+The struggle noted in the beginning only comes from the paradigm adaptation
+
+Otherwise, the completeness of syntax makes it easy to solve difficult problems
 
 ---
 
