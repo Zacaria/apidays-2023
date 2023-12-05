@@ -4,11 +4,17 @@ revealOptions:
   transition: "fade"
 ---
 
+
+#### API Days Paris
+
+<br>
+
 [<img src="imgs/rust-logo.png" alt="rust logo" style="height: 200px">](https://www.rust-lang.org/)
 
 <br>
 
-API Days Paris - Zacaria Chtatar - December 2023
+
+Zacaria Chtatar - December 2023
 
 https://havesome-rust-apidays.surge.sh
 
@@ -30,11 +36,13 @@ But I'm here to express my own opinions which do not necessarily reflect those o
 
 ---
 
-Forget TypeScript <!-- .element: class="fragment" data-fragment-index="1" -->
+### Forget TypeScript <!-- .element: class="fragment" data-fragment-index="1" -->
 
-Choose Rust to build <!-- .element: class="fragment" data-fragment-index="2" -->
+### Choose Rust <!-- .element: class="fragment" data-fragment-index="2" -->
 
-Robust, Fast and Cheap APIs <!-- .element: class="fragment" data-fragment-index="3" -->
+#### to build <!-- .element: class="fragment" data-fragment-index="3" -->
+
+### Robust, Fast and Cheap APIs <!-- .element: class="fragment" data-fragment-index="4" -->
 
 note:
 
@@ -110,12 +118,13 @@ The feeling of safety was no more.
 
 <img src="imgs/ts-superset.jpeg" alt="ts as a super set of js schema" style="height: 200px">
 
-benefits:
+Benefits:
 - IDE Developer experience
 - OOP patterns
 - compiler checks
 - type system
-- ease management of big codebase
+
+=> better management of big codebase <!-- .element: class="fragment" data-fragment-index="1" -->
 
 note:
 
@@ -479,22 +488,6 @@ https://aws.amazon.com/fr/blogs/opensource/sustainability-with-rust/
 
 https://www.slashdata.co/blog/state-of-the-developer-nation-23rd-edition-the-fall-of-web-frameworks-coding-languages-blockchain-and-more
 
-----
-
-### It's a challenge
- 
-- It takes 3 to 6 months to become productive
-
-- It's not **that** hard, it's just different
-
-- Documentation was oriented towards C/C++ devs
-
-note:
-
-As a manager recruiting someone who successfully went through the process of learning Rust
-
-It's a safe bet on the technical aspect
-
 ---
 
 ### Features
@@ -509,6 +502,8 @@ It's a safe bet on the technical aspect
 => There is no blackbox between you and the machine <!-- .element: class="fragment" data-fragment-index="1" -->
 
 => Better predictability <!-- .element: class="fragment" data-fragment-index="2" -->
+
+=> Awesome developer experience <!-- .element: class="fragment" data-fragment-index="3" -->
 
 note:
 
@@ -656,8 +651,9 @@ Moves slower because you need to make your code correct to compile.
 You can easily take shortcuts when developing, but if you're a serious professional.
 
 You will have to remove them before releasing. The good thing is that the shortcuts are obvious in the code.
+Like the unwrap function I showed you earlier
 
-It's an other paradigm to embrace that really empowers developers even when using other languages. It touches fundamentals of software engineering
+An trust me it's not that hard. It's just different.
 
 It was challenging to me. But lately I find more and more resources I wish I had when I started.
 So today I feel like it's not that hard anymore. Especially with ChatGPT and Copilot.
