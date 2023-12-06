@@ -316,6 +316,16 @@ It's even better when it's embedded in the language <!-- .element: class="fragme
 
 [Source](https://www.explainxkcd.com/wiki/index.php/2347:_Dependency)
 
+note:
+
+Do you remembet the left-pad drama ?
+
+One day in 2016, an open-source contributor removed all the packages he had published on npm.
+
+His packages were not that big. But they were heavily depended on by a lot of bigger packages and projects.
+
+This resulted in breaking all npm installation during 2 hours until npm restored themselves the 11 lines of code.
+
 ----
 
 ### crates.io
@@ -424,7 +434,9 @@ Every variable is cleaned at the precise moment it goes out of scope
 
 ----
 
-<img src="imgs/comparison.png" style="height: 250px">
+<img src="imgs/comparison.png" style="height: 450px">
+
+<br> 
 
 - cpu & memory
 - less bugs
@@ -655,13 +667,9 @@ But you can be assured that the complexity won't go exponential like in JS/TS ec
 
 ---
 
-### Project lifetime
+#### [Project lifetime](https://www.youtube.com/watch?v=Wy-y75mMRg4)
 
-----
-
-<img src="imgs/theos-chart.png" style="height: 550px">
-
-[Source](https://www.youtube.com/watch?v=Wy-y75mMRg4)
+<img src="imgs/theos-chart.png" style="height: 600px">
 
 note:
 
