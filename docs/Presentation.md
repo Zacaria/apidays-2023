@@ -58,7 +58,7 @@ I'll introduce you to Rust by being as less technical as possible.
 
 ## Some context
 
-----
+---
 
 ### 2009
 
@@ -70,7 +70,7 @@ note:
 
 2009 : it's jQuery era JS lives mainly in the browser. It's used to make animations and async requests
 
-----
+---
 
 ### Until Nodejs
 
@@ -91,7 +91,7 @@ Suddenly, it became really easy to reuse and build upon JS code.
 
 The abstraction was so powerfull that it created a rich ecosystem where JS was a must learn language
 
-----
+---
 
 ### Fullstack
 
@@ -112,7 +112,7 @@ Because in fact JavaScript doesn't help you follow strict interfaces
 
 The feeling of safety was no more.
 
-----
+---
 
 ### TypeScript
 
@@ -130,7 +130,7 @@ note:
 
 So TypeScript came as a superset of javascript. Bringing types, checks and better code discoverability. overall better developer experience
 
-----
+---
 
 ### Pain points
 
@@ -167,7 +167,7 @@ The more technology enters inside our society, the more it becomes sensitive
 
 At first it was on optional boost to our lives
 
-----
+---
 
 |Stakes| Needs|
 |-------|-------|
@@ -206,7 +206,7 @@ The consistency of integrating NodeJS modules enabled the boom of all the fronte
 
 I believe that ultra stability of backend APIs will enable an other leap for our society
 
-----
+---
 
 <img src="imgs/billion-dollar-mistake.jpg" style="height: 350px">
 
@@ -218,7 +218,7 @@ But when a value is unexpectedly null or undefined.
 
 That's an invalid state, and we do not need this.
 
-----
+---
 
 ### enums
 
@@ -246,7 +246,7 @@ Instead, use the Option enum to represent the idea of nothing
 
 And the compiler will make sure you don't forget to handle this case
 
-----
+---
 
 ```rust
 struct FakeCat {
@@ -276,7 +276,7 @@ note:
 
 In other languages we should implement getters, setters and think of absurd cases to protect the system from invalid states
 
-----
+---
 
 What's wrong with this TS snippet ?
 
@@ -292,7 +292,7 @@ There is no hint that this could break under some conditions
 
 Not in the interface, nor in the code
 
-----
+---
 
 ```rust
 fn get_config(path: &str) -> Result<String, io::Error> {
@@ -302,7 +302,7 @@ fn get_config(path: &str) -> Result<String, io::Error> {
 
 ```rust
 fn get_config(path: &str) -> String {
-    fs::read_to_string(path).unwrap()
+    fs::read_to_string(path).unwrap() // That's a shortcut, don't send me to prod !
 }
 ```
 
@@ -310,7 +310,7 @@ We need to clarify what could go wrong <!-- .element: class="fragment" data-frag
 
 It's even better when it's embedded in the language <!-- .element: class="fragment" data-fragment-index="2" -->
 
-----
+---
 
 2016 : Do you remember the [left-pad drama](https://qz.com/646467/how-one-programmer-broke-the-internet-by-deleting-a-tiny-piece-of-code) ?
 
@@ -328,7 +328,7 @@ His packages were not that big. But they were heavily depended on by a lot of bi
 
 This resulted in breaking all npm installation during 2 hours until npm restored themselves the 11 lines of code.
 
-----
+---
 
 ### crates.io
 
@@ -340,7 +340,7 @@ note:
 cargo does not allow unpublishing
 Instead it allows flagging packages and version to not be downloaded as new dependency
 
-----
+---
 
 Linux: [The Kernel](https://linux.developpez.com/actu/337316/Rust-for-Linux-est-officiellement-fusionne-le-support-initial-de-Rust-for-Linux-fournit-l-infrastructure-de-base-et-une-integration-elementaire/)
 
@@ -365,7 +365,7 @@ That's a big sign of trust towards the whole ecosystem
 
 ## Fast
 
-----
+---
 
 <img src="imgs/comparison.png" style="height: 450px">
 
@@ -377,7 +377,7 @@ Energy measured using a framework (Computer Language Benchmarks Game) designed f
 
 And Intel's Running Average Power Limit (RAPL) tool which can measure energy consumption of an executed program.
 
-----
+---
 
 #### Github: [Code Search index](https://github.blog/2023-02-06-the-technology-behind-githubs-new-code-search/)
 
@@ -393,7 +393,7 @@ And Intel's Running Average Power Limit (RAPL) tool which can measure energy con
 - 36h with Rust and Kafka <!-- .element: class="fragment" data-fragment-index="1" -->
 - 640 queries /s <!-- .element: class="fragment" data-fragment-index="1" -->
 
-----
+---
 
 #### Cloudflare: [HTTP proxy](https://blog.cloudflare.com/how-we-built-pingora-the-proxy-that-connects-cloudflare-to-the-internet/)
 
@@ -407,7 +407,7 @@ And Intel's Running Average Power Limit (RAPL) tool which can measure energy con
 
 = 434 years less handshakes per day <!-- .element: class="fragment" data-fragment-index="5" -->
 
-----
+---
 
 #### Discord: [Message read service](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)
 
@@ -434,7 +434,7 @@ Every variable is cleaned at the precise moment it goes out of scope
 
 ## Cheap
 
-----
+---
 
 <img src="imgs/comparison.png" style="height: 450px">
 
@@ -484,7 +484,7 @@ As a more difficult than average technology.
 
 By recruiting Rust developers you get better than average devs as Rust teachings can be used even outside of the language
 
-----
+---
 
 #### Growing community
 
@@ -526,7 +526,7 @@ note:
 - As a side effect, the high level languages devs get closer to the machine and get better at writing correct code
 - Developers do the memory management by themselves, but now are guided by the rules of the compiler
 
-----
+---
 
 ### Ownership rules
 
@@ -545,7 +545,8 @@ pas de GC
 
 pas de référence vers rien, pas de undefined
 
-----
+---
+
 ### The compiler ❤️
 
 ```rust
@@ -582,7 +583,7 @@ This kind of hints are everywhere, not only for simple hello world examples
 
 Tell me now, who wants to go back to stacktraces ?
 
-----
+---
 
 ### Tools
 
@@ -599,7 +600,7 @@ cargo is like npm for NodeJs, it brings almost all the tools you need
 
 There is no debate over which tool, or formatting standard to use
 
-----
+---
 
 #### Cargo doc stays up to date
 
@@ -623,7 +624,7 @@ This generates a full website documentation
 
 And yes, the test in the comments are compiled
 
-----
+---
 
 <img src="imgs/cargo-doc.png" style="height: 600px">
 
@@ -683,7 +684,7 @@ And Rust is perfect at this job. As we saw with the different case studies, proj
 
 It rather found it's way in the market. Then when performance or security problems became to big. Then they rewrote in Rust
 
-----
+---
 
 > In other languages simple things are easy and complex things are possible, in Rust simple things are possible and complex things are EASY.
 
