@@ -223,6 +223,41 @@ That's an invalid state, and we do not need this.
 ### enums
 
 ```rust
+struct FakeCat {
+    alive: bool,
+    hungry: bool,
+}
+
+let zombie = FakeCat { alive: false, hungry: true }; // ???
+
+```
+
+<blockquote class="fragment" data-fragment-index="1">
+Rust makes it easy to make invalid state unrepresentable
+</blockquote>
+
+<span class="fragment" data-fragment-index="2">
+
+```rust
+enum RealCat {
+    Alive { hungry: bool }, // enums can contain structs
+    Dead,
+}
+
+let cat = RealCat::Alive { hungry: true };
+let dead_cat = RealCat::Dead;
+```
+</span>
+
+note:
+
+In other languages we should implement getters, setters and think of absurd cases to protect the system from invalid states
+
+---
+
+### Option enum
+
+```rust
 // full code of the solution to the billion dollar mistake
 // included in the standard library
 enum Option<T> {
@@ -248,37 +283,9 @@ And the compiler will make sure you don't forget to handle this case
 
 ---
 
-```rust
-struct FakeCat {
-    alive: bool,
-    hungry: bool,
-}
+#### What is wrong with this function ?
 
-let zombie = FakeCat { alive: false, hungry: true }; // ???
-
-```
-
-<blockquote class="fragment" data-fragment-index="1">
-Rust makes it easy to make invalid state unrepresentable with enums
-</blockquote>
-
-<span class="fragment" data-fragment-index="2">
-
-```rust
-enum RealCat {
-    Alive { hungry: bool }, // enums can contain structs
-    Dead,
-}
-```
-</span>
-
-note:
-
-In other languages we should implement getters, setters and think of absurd cases to protect the system from invalid states
-
----
-
-What's wrong with this TS snippet ?
+<br>
 
 ```ts
 function getConfig(path: string): string {
@@ -286,33 +293,43 @@ function getConfig(path: string): string {
 }
 ```
 
-note:
+<br>
 
-There is no hint that this could break under some conditions
+There is no hint that readFileSync can throw an error under some conditions <!-- .element: class="fragment" data-fragment-index="1" -->
+
+note:
 
 Not in the interface, nor in the code
 
 ---
 
+### Result enum
+
+```rust
+enum Result<T, E> {
+    Ok(T),
+    Err(E),
+}
+```
+
 ```rust
 fn get_config(path: &str) -> Result<String, io::Error> {
     fs::read_to_string(path)
 }
-```
 
-```rust
-fn get_config(path: &str) -> String {
-    fs::read_to_string(path).unwrap() // That's a shortcut, don't send me to prod !
+// That's a shortcut, don't send me to prod !
+fn dirty_get_config(path: &str) -> String {
+    fs::read_to_string(path).unwrap() // panics in case of error
 }
 ```
 
-We need to clarify what could go wrong <!-- .element: class="fragment" data-fragment-index="1" -->
+We need to clarify what can go wrong <!-- .element: class="fragment" data-fragment-index="1" -->
 
 It's even better when it's embedded in the language <!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
-2016 : Do you remember the [left-pad drama](https://qz.com/646467/how-one-programmer-broke-the-internet-by-deleting-a-tiny-piece-of-code) ?
+2016 : Do you remember the [left-pad incident](https://qz.com/646467/how-one-programmer-broke-the-internet-by-deleting-a-tiny-piece-of-code) ?
 
 <img src="imgs/left-pad.webp" alt="xkcd 2347" style="height: 500px">
 
