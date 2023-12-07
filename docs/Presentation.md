@@ -623,6 +623,10 @@ This generates a full website documentation
 
 And yes, the test in the comments are compiled
 
+----
+
+<img src="imgs/cargo-doc.png" style="height: 600px">
+
 ---
 
 ### Possible struggles
