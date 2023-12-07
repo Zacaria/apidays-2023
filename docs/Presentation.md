@@ -281,7 +281,7 @@ In other languages we should implement getters, setters and think of absurd case
 What's wrong with this TS snippet ?
 
 ```ts
-function readFile(path: string): string {
+function getConfig(path: string): string {
   return fs.readFileSync(path);
 }
 ```
@@ -295,13 +295,13 @@ Not in the interface, nor in the code
 ----
 
 ```rust
-fn read_file(path: &str) -> Result<String, io::Error> {
+fn get_config(path: &str) -> Result<String, io::Error> {
     fs::read_to_string(path)
 }
 ```
 
 ```rust
-fn read_file(path: &str) -> String {
+fn get_config(path: &str) -> String {
     fs::read_to_string(path).unwrap()
 }
 ```
@@ -659,18 +659,6 @@ And this is just a matter of experience in the ecosystem
 
 [Productivity study](https://blog.rust-lang.org/2020/12/16/rust-survey-2020.html)
 
-----
-
-> In other languages simple things are easy and complex things are possible, in Rust simple things are possible and complex things are EASY.
-
-<img src="imgs/project_complexity.jpg" style="height:400px">
-
-note:
-
-There a few simple things that are complex in the beginning
-
-But you can be assured that the complexity won't go exponential like in JS/TS ecosystem
-
 ---
 
 #### [Project lifetime](https://www.youtube.com/watch?v=Wy-y75mMRg4)
@@ -694,6 +682,18 @@ But when the project finds its way, then the new need is performance and stabili
 And Rust is perfect at this job. As we saw with the different case studies, projects didn't pop in Rust first.
 
 It rather found it's way in the market. Then when performance or security problems became to big. Then they rewrote in Rust
+
+----
+
+> In other languages simple things are easy and complex things are possible, in Rust simple things are possible and complex things are EASY.
+
+<img src="imgs/project_complexity.jpg" style="height:400px">
+
+note:
+
+There a few simple things that are complex in the beginning
+
+But you can be assured that the complexity won't go exponential like in JS/TS ecosystem
 
 ---
 
