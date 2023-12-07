@@ -46,7 +46,7 @@ But I'm here to express my own opinions which do not necessarily reflect those o
 
 note:
 
-But today I'm going to suggest you to
+So today I'm going to suggest you to
 
 Forget TypeScript and choose Rust to build your Robust, fast, and cheap APIs
 
@@ -106,7 +106,7 @@ Frontend became so complicated that we separated Frontend and Backend using APIs
 
 Then we merged the subject again to create the fullstack word
 
-But the Java, dotNet developers trying to create frontend in JS with static type mindsent didn't work well
+But the Java, dotNet developers trying to create frontend in JS with static type mindset didn't work well
 
 Because in fact JavaScript doesn't help you follow strict interfaces
 
@@ -124,11 +124,23 @@ Benefits:
 - compiler checks
 - type system
 
-=> better management of big codebase <!-- .element: class="fragment" data-fragment-index="1" -->
+=> better management of big codebase 
 
 note:
 
 So TypeScript came as a superset of javascript. Bringing types, checks and better code discoverability. overall better developer experience
+
+----
+
+### Pain points
+
+- does not save you from dealing with JS
+- adds types management
+- adds static layer onto dynamic layer
+
+**JSDoc answers to the precise problem of hinting types without getting in your way** <!-- .element: class="fragment" data-fragment-index="1" -->
+
+note:
 
 The problem is that often, project teams build a complete sidesystem of types around the functionalities.
 
@@ -141,16 +153,6 @@ Unfortunately, what TS brings fades just after the compilation.
 Types, classes, interfaces are gone.
 
 At 4am when problems wake you up, it's JavaScript that you have to deal with.
-
-----
-
-### Pain points
-
-- does not save you from dealing with JS
-- adds types management
-- adds static layer onto dynamic layer
-
-**JSDoc answers to the precise problem of hinting types without getting in your way** <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
@@ -414,7 +416,7 @@ And Intel's Running Average Power Limit (RAPL) tool which can measure energy con
 
 - cache of a few billion entries <!-- .element: class="fragment" data-fragment-index="1" -->
 - every connection, message sent and read... <!-- .element: class="fragment" data-fragment-index="2" -->
-- latences every 2 minutes because of Go Garbage collector <!-- .element: class="fragment" data-fragment-index="3" -->
+- latences every 2 minutes because of Go Garbage Collector <!-- .element: class="fragment" data-fragment-index="3" -->
 
 <img src="imgs/discord_rex.png" style="height: 250px"> <!-- .element: class="fragment" data-fragment-index="4" -->
 
@@ -502,7 +504,7 @@ https://www.slashdata.co/blog/state-of-the-developer-nation-23rd-edition-the-fal
 
 ### Features
 
-- static types & inference
+- static types
 - compiled
 - no GC
 - compiler developed in Rust
@@ -698,7 +700,7 @@ It rather found it's way in the market. Then when performance or security proble
 - [Rustlings](https://github.com/rust-lang/rustlings) - exercises
 - [A half-hour to learn Rust](https://fasterthanli.me/articles/a-half-hour-to-learn-rust) - quick walkthrough
 - [Comprehensive Rust by Google](https://google.github.io/comprehensive-rust/) - complete walkthrough
-- [Noboilerplate](https://www.youtube.com/c/NoBoilerplate) - quick videos
+- [Noboilerplate](https://www.youtube.com/c/NoBoilerplate) - quick videos ❤️️
 - [Code to the moon](https://www.youtube.com/@codetothemoon/videos) - longer videos
 - [Let's get rusty](https://letsgetrusty.com/)- Youtube & paid bootcamp - not sponsored 
 - [Awesome Rust](https://github.com/rust-unofficial/awesome-rust) - keywords discovery
@@ -728,7 +730,7 @@ You can even integrate it in your TS codebase as a module.
 
 If you have a specific part struggling in terms of performance, you can easily integrate it.
 
-I truly believe Rust can solve your problems
+I truly believe Rust can help solve your problems
 
 ---
 
@@ -737,6 +739,9 @@ I truly believe Rust can solve your problems
 <img src="imgs/crab2.png" style="height: 30vh">
 
 Slides : [https://havesome-rust-apidays.surge.sh](https://havesome-rust-apidays.surge.sh)
+
+<img src="imgs/x-logo.png" style="height: 1.5rem; vertical-align: sub; margin: 5px"> [@ChtatarZacaria](https://twitter.com/ChtatarZacaria) - 
+🌍 [havesomecode.io](https://www.havesomecode.io)
 
 ---
 
