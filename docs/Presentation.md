@@ -466,7 +466,7 @@ And Intel's Running Average Power Limit (RAPL) tool which can measure energy con
 <!-- <ul> -->
 <span class="fragment" data-fragment-index="1">Most admired language according to  <a href="https://survey.stackoverflow.co/2023/#section-admired-and-desired-programming-scripting-and-markup-languages">StackOverflow</a> for 8 years !</span>
 
-<span class="fragment" data-fragment-index="3">Only place where there is more devs available than offers </span>
+<span class="fragment" data-fragment-index="3">Only place where there is **more** devs available than offers </span>
 <!-- <li class="fragment" data-fragment-index="4">Web3 projects </li> -->
 <!-- </ul> -->
 
