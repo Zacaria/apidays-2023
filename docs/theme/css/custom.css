@@ -3,26 +3,33 @@
 /* @import url(cube.css); */
 
 .reveal {
-    font-family: "Source Sans Pro";
+  font-family: "Source Sans Pro";
 }
 
-h1, h2,h3,h4,h5,p, li, blockquote {
-    font-size: 30px;
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li,
+blockquote {
+  font-size: 30px;
 }
 .reveal li {
-    line-height: 1.5em;
+  line-height: 1.5em;
 }
 
-.reveal .slides>section {
-    perspective: none;
+.reveal .slides > section {
+  perspective: none;
 }
 
 .reveal pre {
-    font-size: 0.40em;
+  font-size: 0.4em;
 }
 
 .reveal .slide-number {
-    display: none !important;
+  display: none !important;
 }
 
 /* .reveal pre code {
